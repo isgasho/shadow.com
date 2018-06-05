@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="108px" height="137px" viewBox="0 0 108 137" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-438.000000, -1447.000000)">
+        <g id="Group" transform="translate(442.000000, 1451.000000)">
+            <rect id="Rectangle-16" fill="#D8D8D8" x="31" y="6" width="23" height="6"></rect>
+            <path d="M43,81 C31.9544828,81 23,72.0455172 23,61 C23,49.9544828 31.9544828,41 43,41 C54.0455172,41 63,49.9544828 63,61 C63,72.0455172 54.0455172,81 43,81 Z M40.5172414,62.7931034 L35.5517241,57.8275862 L32.6551724,60.7241379 L37.4827586,65.6896552 L40.5172414,68.5862069 L53.0689655,55.8965517 L50.1724138,53 L40.5172414,62.7931034 Z" id="Shape" fill="#F64F64" fill-rule="nonzero"></path>
+            <path d="M84.7854881,12 L94.3032012,12 C97.4494563,12 100,14.3631286 100,17.2781955 L100,123.721805 C100,126.636871 97.4494563,129 94.3032012,129 L81,129" id="Rectangle-15-Copy" stroke="#D0D1D2" stroke-width="7"></path>
+            <rect id="Rectangle-15" stroke="#000000" stroke-width="7" x="0" y="0" width="85" height="129" rx="6"></rect>
+            <path d="M42.5,118 C40.0147186,118 38,115.985281 38,113.5 C38,111.014719 40.0147186,109 42.5,109 C44.9852814,109 47,111.014719 47,113.5 C47,115.985281 44.9852814,118 42.5,118 Z" id="Path" stroke="#000000" stroke-width="4"></path>
+        </g>
+    </g>
+</svg>
