@@ -90,7 +90,7 @@ vi /usr/local/php/etc/php.ini
 上一部找到proc的函数(一般是两个)，删除即可
 ```
 
-[删除proc函数示例](https://github.com/ouhaohan8023/shadow.com/raw/master/pre/disable.png)
+![删除proc函数示例](https://github.com/ouhaohan8023/shadow.com/raw/master/pre/disable.png)
 
 ##### 6.修改`open_basedir`限制
 ```$xslt
@@ -100,7 +100,7 @@ fastcgi_param PHP_ADMIN_VALUE "open_basedir=/home/wwwroot/ssmanager/:/tmp/:/proc
 
 ```
 
-[修改fastcgi_param示例](https://github.com/ouhaohan8023/shadow.com/raw/master/pre/fastcgi.png)
+![修改fastcgi_param示例](https://github.com/ouhaohan8023/shadow.com/raw/master/pre/fastcgi.png)
 
 ##### 7.进入项目根目录（系统自动生成），拉取`github`项目
 ```$xslt

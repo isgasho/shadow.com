@@ -31,6 +31,11 @@
     <link href="/assets/layouts/layout4/css/custom.min.css" rel="stylesheet" type="text/css" />
     <!-- END THEME LAYOUT STYLES -->
     <link rel="shortcut icon" href="{{asset('favicon.ico')}}" />
+    <style>
+        .page-header.navbar{
+            background:#3A74FF ;
+        }
+    </style>
 </head>
 
 <body class="page-container-bg-solid page-header-fixed page-sidebar-closed-hide-logo">
