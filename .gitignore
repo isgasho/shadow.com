@@ -1,7 +1,9 @@
+/node_modules
+.env
 /public/upload
-/storage/framework
-/storage/logs
-/storage/app/public
+#/storage/framework
+#/storage/logs
+#/storage/app/public
 /vendor
 /.idea
 /.vagrant
