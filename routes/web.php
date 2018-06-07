@@ -7,7 +7,8 @@ Route::group(['middleware' => ['forbidden']], function () {
     Route::any('login', 'LoginController@index'); // 登录
     Route::get('logout', 'LoginController@logout'); // 退出
     Route::any('register', 'RegisterController@index'); // 注册
-    Route::any('resetPassword', 'UserController@resetPassword'); // 重设密码
+  Route::any('register2', 'RegisterController@indexByPhone'); // 注册--手机
+  Route::any('resetPassword', 'UserController@resetPassword'); // 重设密码
     Route::any('reset/{token}', 'UserController@reset'); // 重设密码
     Route::any('activeUser', 'UserController@activeUser'); // 激活账号
     Route::get('active/{token}', 'UserController@active'); // 激活账号
@@ -147,6 +148,7 @@ Route::get('front/aboutus', 'FrontController@aboutus'); //VPN应用--关于我�
 Route::get('front/privacy', 'FrontController@privacy'); //VPN应用--关于我们
 Route::get('front/survice', 'FrontController@survice'); //VPN应用--关于我们
 
+Route::get('sms', 'RegisterController@test2'); //sms测试
 
 
 

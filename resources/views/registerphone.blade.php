@@ -38,10 +38,10 @@
 <!-- BEGIN LOGIN -->
 <div class="content">
     <nav style="padding-bottom: 20px;text-align: center;">
-        <a href="{{url('register2')}}">手机号注册请点击</a>
+        <a href="{{url('register')}}">邮件注册请点击</a>
     </nav>
     <!-- BEGIN REGISTRATION FORM -->
-    <form class="register-form" action="{{url('register')}}" method="post" style="display: block;">
+    <form id="myForm" class="register-form" action="{{url('register2')}}" method="post" style="display: block;">
         @if($is_register)
             @if(Session::get('errorMsg'))
                 <div class="alert alert-danger">
@@ -51,7 +51,7 @@
             @endif
             <div class="form-group">
                 <label class="control-label visible-ie8 visible-ie9">{{trans('register.username')}}</label>
-                <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="{{trans('register.username_placeholder')}}" name="username" value="{{Request::old('username')}}" required />
+                <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="{{trans('register.phone_placeholder')}}" name="username" value="{{Request::old('username')}}" required />
                 <input type="hidden" name="register_token" value="{{Session::get('register_token')}}" />
                 <input type="hidden" name="_token" value="{{csrf_token()}}" />
                 <input type="hidden" name="aff" value="{{Session::get('register_aff')}}" />

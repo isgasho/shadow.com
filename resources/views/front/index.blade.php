@@ -52,8 +52,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 text-center">
-                        <h3 class="Title mb-6"><span>没有 VPN，就没有安全可言。这是事实。</span></h3>
-                        <p class="Text mb-7 small"><span>使用 穿云梯，确保您的在线活动安全、私密。</span></p>
+                        <h3 class="Title mb-6"><span>不断努力提升，满足用户需求的网络加速工具。</span></h3>
+                        <p class="Text mb-7 small"><span>使用穿云梯，确保您的在线活动安全、私密。</span></p>
                     </div>
                 </div>
                 <div class="row row__flex">
