@@ -16,7 +16,7 @@
                     <div class="portlet light bordered">
                         <div class="portlet-body form">
                             <!-- BEGIN FORM-->
-                            <form action="{{url('admin/editNode')}}" method="post" class="form-horizontal" onsubmit="return do_submit();">
+                            <form action="{{url('wSifGFeO5mQoCWB4/editNode')}}" method="post" class="form-horizontal" onsubmit="return do_submit();">
                                 <div class="form-body">
                                     <div class="row">
                                         <div class="col-md-6">
@@ -367,14 +367,14 @@
 
             $.ajax({
                 type: "POST",
-                url: "{{url('admin/editNode')}}",
+                url: "{{url('wSifGFeO5mQoCWB4/editNode')}}",
                 async: false,
                 data: {_token:_token, id:id, name: name, labels:labels, group_id:group_id, country_code:country_code, server:server, ip:ip, ipv6:ipv6, desc:desc, method:method, traffic_rate:traffic_rate, protocol:protocol, protocol_param:protocol_param, obfs:obfs, obfs_param:obfs_param, bandwidth:bandwidth, traffic:traffic, monitor_url:monitor_url, is_subscribe:is_subscribe, compatible:compatible, single:single, single_force:single_force, single_port:single_port, single_passwd:single_passwd, single_method:single_method, single_protocol:single_protocol, single_obfs:single_obfs, sort:sort, status:status},
                 dataType: 'json',
                 success: function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'success') {
-                            window.location.href = '{{url('admin/nodeList?page=') . Request::get('page')}}';
+                            window.location.href = '{{url('wSifGFeO5mQoCWB4/nodeList?page=') . Request::get('page')}}';
                         }
                     });
                 }

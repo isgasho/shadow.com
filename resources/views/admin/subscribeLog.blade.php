@@ -102,17 +102,17 @@
             var user_id = $("#user_id").val();
             var username = $("#username").val();
 
-            window.location.href = '{{url('admin/subscribeLog')}}' + '?user_id=' + user_id + '&username=' + username;
+            window.location.href = '{{url('wSifGFeO5mQoCWB4/subscribeLog')}}' + '?user_id=' + user_id + '&username=' + username;
         }
 
         // 重置
         function doReset() {
-            window.location.href = '{{url('admin/subscribeLog')}}';
+            window.location.href = '{{url('wSifGFeO5mQoCWB4/subscribeLog')}}';
         }
 
         // 启用禁用用户的订阅
         function setStatus(id, status) {
-            $.post("{{url('admin/setSubscribeStatus')}}", {_token:'{{csrf_token()}}', id:id, status:status}, function(ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setSubscribeStatus')}}", {_token:'{{csrf_token()}}', id:id, status:status}, function(ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     window.location.reload();
                 });

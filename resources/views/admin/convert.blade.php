@@ -113,7 +113,7 @@
             layer.confirm('确定继续转换吗？', {icon: 2, title:'警告'}, function(index) {
                 $.ajax({
                     type: "POST",
-                    url: "{{url('admin/convert')}}",
+                    url: "{{url('wSifGFeO5mQoCWB4/convert')}}",
                     async: false,
                     data: {_token:_token, method:method, transfer_enable:transfer_enable, protocol:protocol, protocol_param:protocol_param, obfs:obfs, obfs_param:obfs_param, content: content},
                     dataType: 'json',
@@ -134,7 +134,7 @@
 
         // 下载
         function doDownload() {
-            window.location.href = '{{url('admin/download?type=1')}}';
+            window.location.href = '{{url('wSifGFeO5mQoCWB4/download?type=1')}}';
         }
     </script>
 @endsection

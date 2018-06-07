@@ -373,7 +373,7 @@
             }
 
             $.ajax({
-                url:'{{url('admin/addLevel')}}',
+                url:'{{url('wSifGFeO5mQoCWB4/addLevel')}}',
                 type:"POST",
                 data:{_token:'{{csrf_token()}}', level:level, level_name:level_name},
                 beforeSend:function(){
@@ -386,7 +386,7 @@
                     }
 
                     $("#add_level_modal").modal("hide");
-                    window.location.href = '{{url('admin/config?tab=')}}' + tabId;
+                    window.location.href = '{{url('wSifGFeO5mQoCWB4/config?tab=')}}' + tabId;
                 },
                 error:function(){
                     $("#level_msg").show().html("请求错误，请重试");
@@ -402,14 +402,14 @@
 
             $.ajax({
                 type: "POST",
-                url: "{{url('admin/updateLevel')}}",
+                url: "{{url('wSifGFeO5mQoCWB4/updateLevel')}}",
                 async: false,
                 data: {_token:'{{csrf_token()}}', id: id, level:level, level_name:level_name},
                 dataType: 'json',
                 success: function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'success') {
-                            window.location.href = '{{url('admin/config?tab=')}}' + tabId;
+                            window.location.href = '{{url('wSifGFeO5mQoCWB4/config?tab=')}}' + tabId;
                         }
                     });
                 }
@@ -419,10 +419,10 @@
         // 删除等级
         function delLevel(tabId, id) {
             layer.confirm('确定删除该等级吗？', {icon: 2, title:'警告'}, function(index) {
-                $.post("{{url('admin/delLevel')}}", {id:id, _token:'{{csrf_token()}}'}, function(ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/delLevel')}}", {id:id, _token:'{{csrf_token()}}'}, function(ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'success') {
-                            window.location.href = '{{url('admin/config?tab=')}}' + tabId;
+                            window.location.href = '{{url('wSifGFeO5mQoCWB4/config?tab=')}}' + tabId;
                         }
                     });
                 });
@@ -449,7 +449,7 @@
             }
 
             $.ajax({
-                url:'{{url('admin/addCountry')}}',
+                url:'{{url('wSifGFeO5mQoCWB4/addCountry')}}',
                 type:"POST",
                 data:{_token:'{{csrf_token()}}', country_name:country_name, country_code:country_code},
                 beforeSend:function(){
@@ -462,7 +462,7 @@
                     }
 
                     $("#add_country_modal").modal("hide");
-                    window.location.href = '{{url('admin/config?tab=')}}' + tabId;
+                    window.location.href = '{{url('wSifGFeO5mQoCWB4/config?tab=')}}' + tabId;
                 },
                 error:function(){
                     $("#country_msg").show().html("请求错误，请重试");
@@ -478,14 +478,14 @@
 
             $.ajax({
                 type: "POST",
-                url: "{{url('admin/updateCountry')}}",
+                url: "{{url('wSifGFeO5mQoCWB4/updateCountry')}}",
                 async: false,
                 data: {_token:'{{csrf_token()}}', id: id, country_name:country_name, country_code:country_code},
                 dataType: 'json',
                 success: function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'success') {
-                            window.location.href = '{{url('admin/config?tab=')}}' + tabId;
+                            window.location.href = '{{url('wSifGFeO5mQoCWB4/config?tab=')}}' + tabId;
                         }
                     });
                 }
@@ -495,10 +495,10 @@
         // 删除国家/地区
         function delCountry(tabId, id) {
             layer.confirm('确定删除该国家/地区吗？', {icon: 2, title:'警告'}, function(index) {
-                $.post("{{url('admin/delCountry')}}", {id:id, _token:'{{csrf_token()}}'}, function(ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/delCountry')}}", {id:id, _token:'{{csrf_token()}}'}, function(ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'success') {
-                            window.location.href = '{{url('admin/config?tab=')}}' + tabId;
+                            window.location.href = '{{url('wSifGFeO5mQoCWB4/config?tab=')}}' + tabId;
                         }
                     });
                 });
@@ -520,7 +520,7 @@
             }
 
             $.ajax({
-                url:'{{url('admin/config')}}',
+                url:'{{url('wSifGFeO5mQoCWB4/config')}}',
                 type:"POST",
                 data:{_token:_token, name:name, type:type},
                 beforeSend:function(){
@@ -544,10 +544,10 @@
         // 删除配置
         function delConfig(tabId, id) {
             layer.confirm('确定删除配置？', {icon: 2, title:'警告'}, function(index) {
-                $.post("{{url('admin/delConfig')}}", {id:id, _token:'{{csrf_token()}}'}, function(ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/delConfig')}}", {id:id, _token:'{{csrf_token()}}'}, function(ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'success') {
-                            window.location.href = '{{url('admin/config?tab=')}}' + tabId;
+                            window.location.href = '{{url('wSifGFeO5mQoCWB4/config?tab=')}}' + tabId;
                         }
                     });
                 });
@@ -561,14 +561,14 @@
             var _token = '{{csrf_token()}}';
             $.ajax({
                 type: "POST",
-                url: "{{url('admin/setDefaultConfig')}}",
+                url: "{{url('wSifGFeO5mQoCWB4/setDefaultConfig')}}",
                 async: false,
                 data: {_token:_token, id: id},
                 dataType: 'json',
                 success: function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'success') {
-                            window.location.href = '{{url('admin/config?tab=')}}' + tabId;
+                            window.location.href = '{{url('wSifGFeO5mQoCWB4/config?tab=')}}' + tabId;
                         }
                     });
                 }

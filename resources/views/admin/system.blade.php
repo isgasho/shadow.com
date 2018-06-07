@@ -631,7 +631,7 @@
                                             </form>
                                         </div>
                                         <div class="tab-pane" id="tab_8">
-                                            <form action="{{url('admin/setExtend')}}" method="post" class="form-horizontal" role="form" onsubmit="return submitExtend();">
+                                            <form action="{{url('wSifGFeO5mQoCWB4/setExtend')}}" method="post" class="form-horizontal" role="form" onsubmit="return submitExtend();">
                                                 <div class="form-group">
                                                     <label for="website_analytics" class="col-md-2 control-label">统计代码</label>
                                                     <div class="col-md-8">
@@ -678,7 +678,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "{{url('admin/setExtend')}}",
+                url: "{{url('wSifGFeO5mQoCWB4/setExtend')}}",
                 async: false,
                 data: {_token:'{{csrf_token()}}', website_analytics:website_analytics, website_customer_service:website_customer_service},
                 dataType: 'json',
@@ -698,7 +698,7 @@
             var initial_labels_for_user = $(this).val() ? $(this).val().join(',') : '';
 
             console.log(initial_labels_for_user);
-            $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'initial_labels_for_user', value:initial_labels_for_user}, function (ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'initial_labels_for_user', value:initial_labels_for_user}, function (ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     if (ret.status == 'fail') {
                         window.location.reload();
@@ -712,7 +712,7 @@
             'switchChange.bootstrapSwitch': function(event, state) {
                 var is_rand_port = state ? 1 : 0;
 
-                $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_rand_port', value:is_rand_port}, function (ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_rand_port', value:is_rand_port}, function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'fail') {
                             window.location.reload();
@@ -727,7 +727,7 @@
             'switchChange.bootstrapSwitch': function(event, state) {
                 var is_forbid_robot = state ? 1 : 0;
 
-                $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_forbid_robot', value:is_forbid_robot}, function (ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_forbid_robot', value:is_forbid_robot}, function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'fail') {
                             window.location.reload();
@@ -742,7 +742,7 @@
             'switchChange.bootstrapSwitch': function(event, state) {
                 var is_user_rand_port = state ? 1 : 0;
 
-                $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_user_rand_port', value:is_user_rand_port}, function (ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_user_rand_port', value:is_user_rand_port}, function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'fail') {
                             window.location.reload();
@@ -757,7 +757,7 @@
             'switchChange.bootstrapSwitch': function(event, state) {
                 var login_add_score = state ? 1 : 0;
 
-                $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'login_add_score', value:login_add_score}, function (ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'login_add_score', value:login_add_score}, function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'fail') {
                             window.location.reload();
@@ -772,7 +772,7 @@
             'switchChange.bootstrapSwitch': function(event, state) {
                 var is_register = state ? 1 : 0;
 
-                $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_register', value:is_register}, function (ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_register', value:is_register}, function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'fail') {
                             window.location.reload();
@@ -787,7 +787,7 @@
             'switchChange.bootstrapSwitch': function(event, state) {
                 var is_invite_register = state ? 1 : 0;
 
-                $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_invite_register', value:is_invite_register}, function (ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_invite_register', value:is_invite_register}, function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'fail') {
                             window.location.reload();
@@ -802,7 +802,7 @@
             'switchChange.bootstrapSwitch': function(event, state) {
                 var is_reset_password = state ? 1 : 0;
 
-                $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_reset_password', value:is_reset_password}, function (ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_reset_password', value:is_reset_password}, function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'fail') {
                             window.location.reload();
@@ -817,7 +817,7 @@
             'switchChange.bootstrapSwitch': function(event, state) {
                 var is_captcha = state ? 1 : 0;
 
-                $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_captcha', value:is_captcha}, function (ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_captcha', value:is_captcha}, function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'fail') {
                             window.location.reload();
@@ -832,7 +832,7 @@
             'switchChange.bootstrapSwitch': function(event, state) {
                 var is_free_code = state ? 1 : 0;
 
-                $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_free_code', value:is_free_code}, function (ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_free_code', value:is_free_code}, function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'fail') {
                             window.location.reload();
@@ -847,7 +847,7 @@
             'switchChange.bootstrapSwitch': function(event, state) {
                 var is_active_register = state ? 1 : 0;
 
-                $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_active_register', value:is_active_register}, function (ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_active_register', value:is_active_register}, function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'fail') {
                             window.location.reload();
@@ -862,7 +862,7 @@
             'switchChange.bootstrapSwitch': function(event, state) {
                 var expire_warning = state ? 1 : 0;
 
-                $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'expire_warning', value:expire_warning}, function (ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'expire_warning', value:expire_warning}, function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'fail') {
                             window.location.reload();
@@ -877,7 +877,7 @@
             'switchChange.bootstrapSwitch': function(event, state) {
                 var is_node_crash_warning = state ? 1 : 0;
 
-                $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_node_crash_warning', value:is_node_crash_warning}, function (ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_node_crash_warning', value:is_node_crash_warning}, function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'fail') {
                             window.location.reload();
@@ -892,7 +892,7 @@
             'switchChange.bootstrapSwitch': function(event, state) {
                 var is_server_chan = state ? 1 : 0;
 
-                $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_server_chan', value:is_server_chan}, function (ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_server_chan', value:is_server_chan}, function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'fail') {
                             window.location.reload();
@@ -907,7 +907,7 @@
             'switchChange.bootstrapSwitch': function(event, state) {
                 var is_subscribe_ban = state ? 1 : 0;
 
-                $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_subscribe_ban', value:is_subscribe_ban}, function (ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_subscribe_ban', value:is_subscribe_ban}, function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'fail') {
                             window.location.reload();
@@ -922,7 +922,7 @@
             'switchChange.bootstrapSwitch': function(event, state) {
                 var referral_status = state ? 1 : 0;
 
-                $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'referral_status', value:referral_status}, function (ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'referral_status', value:referral_status}, function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'fail') {
                             window.location.reload();
@@ -937,7 +937,7 @@
             'switchChange.bootstrapSwitch': function(event, state) {
                 var traffic_warning = state ? 1 : 0;
 
-                $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'traffic_warning', value:traffic_warning}, function (ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'traffic_warning', value:traffic_warning}, function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'fail') {
                             window.location.reload();
@@ -952,7 +952,7 @@
             'switchChange.bootstrapSwitch': function(event, state) {
                 var is_clear_log = state ? 1 : 0;
 
-                $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_clear_log', value:is_clear_log}, function (ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_clear_log', value:is_clear_log}, function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'fail') {
                             window.location.reload();
@@ -967,7 +967,7 @@
             'switchChange.bootstrapSwitch': function(event, state) {
                 var reset_traffic = state ? 1 : 0;
 
-                $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'reset_traffic', value:reset_traffic}, function (ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'reset_traffic', value:reset_traffic}, function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'fail') {
                             window.location.reload();
@@ -982,7 +982,7 @@
             'switchChange.bootstrapSwitch': function(event, state) {
                 var is_traffic_ban = state ? 1 : 0;
 
-                $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_traffic_ban', value:is_traffic_ban}, function (ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_traffic_ban', value:is_traffic_ban}, function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'fail') {
                             window.location.reload();
@@ -997,7 +997,7 @@
             'switchChange.bootstrapSwitch': function(event, state) {
                 var auto_release_port = state ? 1 : 0;
 
-                $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'auto_release_port', value:auto_release_port}, function (ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'auto_release_port', value:auto_release_port}, function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'fail') {
                             window.location.reload();
@@ -1012,7 +1012,7 @@
             'switchChange.bootstrapSwitch': function(event, state) {
                 var is_youzan = state ? 1 : 0;
 
-                $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_youzan', value:is_youzan}, function (ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'is_youzan', value:is_youzan}, function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'fail') {
                             window.location.reload();
@@ -1031,7 +1031,7 @@
                 return ;
             }
 
-            $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'traffic_ban_value', value:traffic_ban_value}, function (ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'traffic_ban_value', value:traffic_ban_value}, function (ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     if (ret.status == 'fail') {
                         window.location.reload();
@@ -1049,7 +1049,7 @@
                 return ;
             }
 
-            $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'traffic_ban_time', value:traffic_ban_time}, function (ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'traffic_ban_time', value:traffic_ban_time}, function (ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     if (ret.status == 'fail') {
                         window.location.reload();
@@ -1062,7 +1062,7 @@
         function setCrashWarningEmail() {
             var crash_warning_email = $("#crash_warning_email").val();
 
-            $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'crash_warning_email', value:crash_warning_email}, function (ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'crash_warning_email', value:crash_warning_email}, function (ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     if (ret.status == 'fail') {
                         window.location.reload();
@@ -1075,7 +1075,7 @@
         function setServerChanKey() {
             var server_chan_key = $("#server_chan_key").val();
 
-            $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'server_chan_key', value:server_chan_key}, function (ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'server_chan_key', value:server_chan_key}, function (ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     if (ret.status == 'fail') {
                         window.location.reload();
@@ -1093,7 +1093,7 @@
                 return ;
             }
 
-            $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'subscribe_ban_times', value:subscribe_ban_times}, function (ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'subscribe_ban_times', value:subscribe_ban_times}, function (ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     if (ret.status == 'fail') {
                         window.location.reload();
@@ -1106,7 +1106,7 @@
         function setKdtId() {
             var kdt_id = $("#kdt_id").val();
 
-            $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'kdt_id', value:kdt_id}, function (ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'kdt_id', value:kdt_id}, function (ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     if (ret.status == 'fail') {
                         window.location.reload();
@@ -1119,7 +1119,7 @@
         function setYouzanClientId() {
             var youzan_client_id = $("#youzan_client_id").val();
 
-            $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'youzan_client_id', value:youzan_client_id}, function (ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'youzan_client_id', value:youzan_client_id}, function (ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     if (ret.status == 'fail') {
                         window.location.reload();
@@ -1132,7 +1132,7 @@
         function setYouzanClientSecret() {
             var youzan_client_secret = $("#youzan_client_secret").val();
 
-            $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'youzan_client_secret', value:youzan_client_secret}, function (ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'youzan_client_secret', value:youzan_client_secret}, function (ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     if (ret.status == 'fail') {
                         window.location.reload();
@@ -1156,7 +1156,7 @@
                 return ;
             }
 
-            $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'min_rand_score', value:min_rand_score}, function (ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'min_rand_score', value:min_rand_score}, function (ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     if (ret.status == 'fail') {
                         window.location.reload();
@@ -1180,7 +1180,7 @@
                 return ;
             }
 
-            $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'max_rand_score', value:max_rand_score}, function (ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'max_rand_score', value:max_rand_score}, function (ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     if (ret.status == 'fail') {
                         window.location.reload();
@@ -1198,7 +1198,7 @@
                 return ;
             }
 
-            $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'min_port', value:min_port}, function (ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'min_port', value:min_port}, function (ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     if (ret.status == 'fail') {
                         window.location.reload();
@@ -1223,7 +1223,7 @@
                 return ;
             }
 
-            $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'max_port', value:max_port}, function (ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'max_port', value:max_port}, function (ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     if (ret.status == 'fail') {
                         window.location.reload();
@@ -1241,7 +1241,7 @@
                 return ;
             }
 
-            $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'default_days', value:default_days}, function (ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'default_days', value:default_days}, function (ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     if (ret.status == 'fail') {
                         window.location.reload();
@@ -1259,7 +1259,7 @@
                 return ;
             }
 
-            $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'default_traffic', value:default_traffic}, function (ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'default_traffic', value:default_traffic}, function (ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     if (ret.status == 'fail') {
                         window.location.reload();
@@ -1277,7 +1277,7 @@
                 return ;
             }
 
-            $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'invite_num', value:invite_num}, function (ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'invite_num', value:invite_num}, function (ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     if (ret.status == 'fail') {
                         window.location.reload();
@@ -1295,7 +1295,7 @@
                 return ;
             }
 
-            $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'reset_password_times', value:reset_password_times}, function (ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'reset_password_times', value:reset_password_times}, function (ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     if (ret.status == 'fail') {
                         window.location.reload();
@@ -1313,7 +1313,7 @@
                 return ;
             }
 
-            $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'active_times', value:active_times}, function (ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'active_times', value:active_times}, function (ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     if (ret.status == 'fail') {
                         window.location.reload();
@@ -1326,7 +1326,7 @@
         function setSubscribeDomain() {
             var subscribe_domain = $("#subscribe_domain").val();
 
-            $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'subscribe_domain', value:subscribe_domain}, function (ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'subscribe_domain', value:subscribe_domain}, function (ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     if (ret.status == 'fail') {
                         window.location.reload();
@@ -1344,7 +1344,7 @@
                 return ;
             }
 
-            $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'register_ip_limit', value:register_ip_limit}, function (ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'register_ip_limit', value:register_ip_limit}, function (ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     if (ret.status == 'fail') {
                         window.location.reload();
@@ -1362,7 +1362,7 @@
                 return ;
             }
 
-            $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'subscribe_max', value:subscribe_max}, function (ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'subscribe_max', value:subscribe_max}, function (ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     if (ret.status == 'fail') {
                         window.location.reload();
@@ -1380,7 +1380,7 @@
                 return ;
             }
 
-            $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'traffic_warning_percent', value:traffic_warning_percent}, function (ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'traffic_warning_percent', value:traffic_warning_percent}, function (ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     if (ret.status == 'fail') {
                         window.location.reload();
@@ -1398,7 +1398,7 @@
                 return ;
             }
 
-            $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'expire_days', value:expire_days}, function (ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'expire_days', value:expire_days}, function (ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     if (ret.status == 'fail') {
                         window.location.reload();
@@ -1411,7 +1411,7 @@
         function setWebsiteName() {
             var website_name = $("#website_name").val();
 
-            $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'website_name', value:website_name}, function (ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'website_name', value:website_name}, function (ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     if (ret.status == 'fail') {
                         window.location.reload();
@@ -1424,7 +1424,7 @@
         function setWebsiteUrl() {
             var website_url = $("#website_url").val();
 
-            $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'website_url', value:website_url}, function (ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'website_url', value:website_url}, function (ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     if (ret.status == 'fail') {
                         window.location.reload();
@@ -1442,7 +1442,7 @@
                 return ;
             }
 
-            $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'login_add_score_range', value:login_add_score_range}, function (ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'login_add_score_range', value:login_add_score_range}, function (ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     if (ret.status == 'fail') {
                         window.location.reload();
@@ -1460,7 +1460,7 @@
                 return ;
             }
 
-            $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'referral_traffic', value:referral_traffic}, function (ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'referral_traffic', value:referral_traffic}, function (ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     if (ret.status == 'fail') {
                         window.location.reload();
@@ -1478,7 +1478,7 @@
                 return ;
             }
 
-            $.post("{{url('admin/setReferralPercent')}}", {_token:'{{csrf_token()}}', value:referral_percent}, function (ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setReferralPercent')}}", {_token:'{{csrf_token()}}', value:referral_percent}, function (ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     if (ret.status == 'fail') {
                         window.location.reload();
@@ -1496,7 +1496,7 @@
                 return ;
             }
 
-            $.post("{{url('admin/setConfig')}}", {_token:'{{csrf_token()}}', name:'referral_money', value:referral_money}, function (ret) {
+            $.post("{{url('wSifGFeO5mQoCWB4/setConfig')}}", {_token:'{{csrf_token()}}', name:'referral_money', value:referral_money}, function (ret) {
                 layer.msg(ret.message, {time:1000}, function() {
                     if (ret.status == 'fail') {
                         window.location.reload();

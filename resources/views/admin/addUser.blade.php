@@ -14,7 +14,7 @@
             <div class="portlet light bordered">
                 <div class="portlet-body form">
                     <!-- BEGIN FORM-->
-                    <form action="{{url('admin/addUser')}}" method="post" class="form-horizontal" onsubmit="return do_submit();">
+                    <form action="{{url('wSifGFeO5mQoCWB4/addUser')}}" method="post" class="form-horizontal" onsubmit="return do_submit();">
                         <div class="form-body">
                             <div class="row">
                                 <div class="col-md-6">
@@ -350,14 +350,14 @@
 
             $.ajax({
                 type: "POST",
-                url: "{{url('admin/addUser')}}",
+                url: "{{url('wSifGFeO5mQoCWB4/addUser')}}",
                 async: false,
                 data: {_token:_token, username: username, password:password, usage:usage, pay_way:pay_way, labels:labels, enable_time:enable_time, expire_time:expire_time, gender:gender, wechat:wechat, qq:qq, is_admin:is_admin, remark:remark, level:level, port:port, passwd:passwd, method:method, transfer_enable:transfer_enable, enable:enable, protocol:protocol, protocol_param:protocol_param, obfs:obfs, obfs_param:obfs_param, speed_limit_per_con:speed_limit_per_con, speed_limit_per_user:speed_limit_per_user},
                 dataType: 'json',
                 success: function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'success') {
-                            window.location.href = '{{url('admin/userList')}}';
+                            window.location.href = '{{url('wSifGFeO5mQoCWB4/userList')}}';
                         }
                     });
                 }
@@ -368,14 +368,14 @@
 
         // 生成随机端口
         function makePort() {
-            $.get("{{url('admin/makePort')}}",  function(ret) {
+            $.get("{{url('wSifGFeO5mQoCWB4/makePort')}}",  function(ret) {
                 $("#port").val(ret);
             });
         }
 
         // 生成随机密码
         function makePasswd() {
-            $.get("{{url('admin/makePasswd')}}",  function(ret) {
+            $.get("{{url('wSifGFeO5mQoCWB4/makePasswd')}}",  function(ret) {
                 $("#passwd").val(ret);
             });
         }

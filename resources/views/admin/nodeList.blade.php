@@ -123,13 +123,13 @@
 
         // 编辑节点
         function editNode(id) {
-            window.location.href = '{{url('admin/editNode?id=')}}' + id + '&page=' + '{{Request::get('page', 1)}}';
+            window.location.href = '{{url('wSifGFeO5mQoCWB4/editNode?id=')}}' + id + '&page=' + '{{Request::get('page', 1)}}';
         }
 
         // 删除节点
         function delNode(id) {
             layer.confirm('确定删除节点？', {icon: 2, title:'警告'}, function(index) {
-                $.post("{{url('admin/delNode')}}", {id:id, _token:'{{csrf_token()}}'}, function(ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/delNode')}}", {id:id, _token:'{{csrf_token()}}'}, function(ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'success') {
                             window.location.reload();
@@ -143,7 +143,7 @@
 
         // 节点流量监控
         function nodeMonitor(id) {
-            window.location.href = '{{url('admin/nodeMonitor?id=')}}' + id + '&page=' + '{{Request::get('page', 1)}}';
+            window.location.href = '{{url('wSifGFeO5mQoCWB4/nodeMonitor?id=')}}' + id + '&page=' + '{{Request::get('page', 1)}}';
         }
 
         // 显示提示

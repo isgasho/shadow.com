@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div class="portlet-body form">
-                        <form role="form" action="{{url('admin/addLabel')}}" method="post" enctype="multipart/form-data" onsubmit="return doSubmit();">
+                        <form role="form" action="{{url('wSifGFeO5mQoCWB4/addLabel')}}" method="post" enctype="multipart/form-data" onsubmit="return doSubmit();">
                             <div class="form-body">
                                 <div class="form-group">
                                     <label>名称</label>
@@ -62,14 +62,14 @@
 
             $.ajax({
                 type: "POST",
-                url: "{{url('admin/addLabel')}}",
+                url: "{{url('wSifGFeO5mQoCWB4/addLabel')}}",
                 async: false,
                 data: {_token:_token, name: name, sort:sort},
                 dataType: 'json',
                 success: function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'success') {
-                            window.location.href = '{{url('admin/labelList')}}';
+                            window.location.href = '{{url('wSifGFeO5mQoCWB4/labelList')}}';
                         }
                     });
                 }

@@ -14,7 +14,7 @@
             <div class="portlet light bordered">
                 <div class="portlet-body form">
                     <!-- BEGIN FORM-->
-                    <form action="{{url('admin/editUser')}}" method="post" class="form-horizontal" onsubmit="return do_submit();">
+                    <form action="{{url('wSifGFeO5mQoCWB4/editUser')}}" method="post" class="form-horizontal" onsubmit="return do_submit();">
                         <div class="form-body">
                             <div class="row">
                                 <div class="col-md-6">
@@ -380,7 +380,7 @@
         // 切换用户身份
         function switchToUser() {
             $.ajax({
-                'url': "{{url("/admin/switchToUser")}}",
+                'url': "{{url("/wSifGFeO5mQoCWB4/switchToUser")}}",
                 'data': {
                     'user_id': '{{$user->id}}',
                     '_token': '{{csrf_token()}}'
@@ -441,14 +441,14 @@
 
             $.ajax({
                 type: "POST",
-                url: "{{url('admin/editUser')}}",
+                url: "{{url('wSifGFeO5mQoCWB4/editUser')}}",
                 async: false,
                 data: {_token:_token, id:id, username: username, password:password, usage:usage, pay_way:pay_way, balance:balance, score:score, status:status, labels:labels, enable_time:enable_time, expire_time:expire_time, gender:gender, wechat:wechat, qq:qq, is_admin:is_admin, remark:remark, level:level, port:port, passwd:passwd, method:method, transfer_enable:transfer_enable, enable:enable, protocol:protocol, protocol_param:protocol_param, obfs:obfs, obfs_param:obfs_param, speed_limit_per_con:speed_limit_per_con, speed_limit_per_user:speed_limit_per_user},
                 dataType: 'json',
                 success: function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'success') {
-                            window.location.href = '{{url('admin/userList?page=') . Request::get('page')}}';
+                            window.location.href = '{{url('wSifGFeO5mQoCWB4/userList?page=') . Request::get('page')}}';
                         }
                     });
                 }
@@ -459,14 +459,14 @@
 
         // 生成随机端口
         function makePort() {
-            $.get("{{url('admin/makePort')}}",  function(ret) {
+            $.get("{{url('wSifGFeO5mQoCWB4/makePort')}}",  function(ret) {
                 $("#port").val(ret);
             });
         }
 
         // 生成随机密码
         function makePasswd() {
-            $.get("{{url('admin/makePasswd')}}",  function(ret) {
+            $.get("{{url('wSifGFeO5mQoCWB4/makePasswd')}}",  function(ret) {
                 $("#passwd").val(ret);
             });
         }
@@ -483,7 +483,7 @@
             }
 
             $.ajax({
-                url:'{{url('admin/handleUserBalance')}}',
+                url:'{{url('wSifGFeO5mQoCWB4/handleUserBalance')}}',
                 type:"POST",
                 data:{_token:'{{csrf_token()}}', user_id:'{{Request::get('id')}}', amount:amount},
                 beforeSend:function(){

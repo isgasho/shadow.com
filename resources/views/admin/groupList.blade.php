@@ -82,18 +82,18 @@
     <script type="text/javascript">
         // 添加节点分组
         function addGroup() {
-            window.location.href = '{{url('admin/addGroup')}}';
+            window.location.href = '{{url('wSifGFeO5mQoCWB4/addGroup')}}';
         }
 
         // 编辑节点分组
         function editGroup(id) {
-            window.location.href = '{{url('admin/editGroup?id=')}}' + id + '&page=' + '{{Request::get('page', 1)}}';
+            window.location.href = '{{url('wSifGFeO5mQoCWB4/editGroup?id=')}}' + id + '&page=' + '{{Request::get('page', 1)}}';
         }
 
         // 删除节点分组
         function delGroup(id) {
             layer.confirm('确定删除分组？', {icon: 2, title:'警告'}, function(index) {
-                $.post("{{url('admin/delGroup')}}", {id:id, _token:'{{csrf_token()}}'}, function(ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/delGroup')}}", {id:id, _token:'{{csrf_token()}}'}, function(ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'success') {
                             window.location.reload();
