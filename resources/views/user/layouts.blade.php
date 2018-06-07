@@ -71,7 +71,7 @@
                         <ul class="dropdown-menu dropdown-menu-default">
                             @if(Session::get('user')['is_admin'])
                                 <li>
-                                    <a href="{{url('admin')}}"> <i class="icon-settings"></i>{{trans('home.console')}}</a>
+                                    <a href="{{url('wSifGFeO5mQoCWB4')}}"> <i class="icon-settings"></i>{{trans('home.console')}}</a>
                                 </li>
                             @endif
                             <li>
@@ -119,10 +119,16 @@
                         <span class="selected"></span>
                     </a>
                 </li>
+                {{--<li class="nav-item {{in_array(Request::path(), ['user/invite']) ? 'active open' : ''}}">--}}
+                    {{--<a href="{{url('user/invite')}}" class="nav-link nav-toggle">--}}
+                        {{--<i class="icon-user-follow"></i>--}}
+                        {{--<span class="title">{{trans('home.invite_code')}}</span>--}}
+                    {{--</a>--}}
+                {{--</li>--}}
                 <li class="nav-item {{in_array(Request::path(), ['user/invite']) ? 'active open' : ''}}">
-                    <a href="{{url('user/invite')}}" class="nav-link nav-toggle">
+                    <a href="{{url('/')}}" class="nav-link nav-toggle">
                         <i class="icon-user-follow"></i>
-                        <span class="title">{{trans('home.invite_code')}}</span>
+                        <span class="title">{{trans('home.go_index')}}</span>
                     </a>
                 </li>
                 <li class="nav-item {{in_array(Request::path(), ['user/goodsList', 'user/addOrder']) || Request::segment(1) == 'payment' ? 'active open' : ''}}">

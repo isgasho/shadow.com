@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="dashboard-stat2 bordered" onclick="skip('wSifGFeO5mQoCWB4/userList');">
+                <div class="dashboard-stat2 bordered" onclick="skip('wSifGFeO5mQoCWB4/userListToday');">
                     <div class="display">
                         <div class="number">
                             <h3 class="font-green-soft">
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="dashboard-stat2 bordered" onclick="skip('wSifGFeO5mQoCWB4/userList');">
+                <div class="dashboard-stat2 bordered" onclick="skip('wSifGFeO5mQoCWB4/userListTodayActiveInSeven');">
                     <div class="display">
                         <div class="number">
                             <h3 class="font-green-sharp">
@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="dashboard-stat2 bordered" onclick="skip('wSifGFeO5mQoCWB4/userList');">
+                <div class="dashboard-stat2 bordered" onclick="skip('wSifGFeO5mQoCWB4/userListTodayActiveOnLine');">
                     <div class="display">
                         <div class="number">
                             <h3 class="font-green-sharp">
@@ -82,7 +82,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="dashboard-stat2 bordered" onclick="skip('wSifGFeO5mQoCWB4/userList?expireWarning=1');">
+                <div class="dashboard-stat2 bordered" onclick="skip('/wSifGFeO5mQoCWB4/orderList?username=&is_expire=&is_coupon=&pay_way=&status=2');">
                     <div class="display">
                         <div class="number">
                             <h3 class="font-red">
@@ -97,7 +97,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="dashboard-stat2 bordered" onclick="skip('wSifGFeO5mQoCWB4/userList?expireWarning=1');">
+                <div class="dashboard-stat2 bordered" onclick="skip('/wSifGFeO5mQoCWB4/orderListToday?username=&is_expire=&is_coupon=&pay_way=&status=2');">
                     <div class="display">
                         <div class="number">
                             <h3 class="font-red">

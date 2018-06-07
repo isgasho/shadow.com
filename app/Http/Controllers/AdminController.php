@@ -1885,6 +1885,48 @@ class AdminController extends Controller
         return Response::view('admin/orderList', $view);
     }
 
+  // 今日收入
+  public function orderListToday(Request $request)
+  {
+    $username = trim($request->get('username'));
+    $is_coupon = $request->get('is_coupon');
+    $is_expire = $request->get('is_expire');
+    $pay_way = $request->get('pay_way');
+    $status = intval($request->get('status'));
+
+    $query = Order::query()->with(['user', 'goods', 'coupon'])->where('created_at','>=',date('Y-m-d'))->orderBy('oid', 'desc');
+
+    if ($username) {
+      $query->whereHas('user', function ($q) use ($username) {
+        $q->where('username', 'like', '%' . $username . '%');
+      });
+    }
+
+    if ($is_coupon != '') {
+      if ($is_coupon) {
+        $query->where('coupon_id', '<>', 0);
+      } else {
+        $query->where('coupon_id', 0);
+      }
+    }
+
+    if ($is_expire != '') {
+      $query->where('is_expire', $is_expire);
+    }
+
+    if ($pay_way != '') {
+      $query->where('pay_way', $pay_way);
+    }
+
+    if ($status != '') {
+      $query->where('status', $status);
+    }
+
+    $view['orderList'] = $query->paginate(15);
+
+    return Response::view('admin/orderList', $view);
+  }
+
     // 设置提现申请状态
     public function setApplyStatus(Request $request)
     {
@@ -2086,4 +2128,74 @@ class AdminController extends Controller
             return Response::json(['status' => 'fail', 'data' => '', 'message' => '删除失败：' . $e->getMessage()]);
         }
     }
+
+    //今日注册用户数
+  public function userListToday(Request $request)
+  {
+    $query = User::query();
+    $query->where('created_at','>=',date('Y-m-d'));
+
+    $userList = $query->orderBy('enable', 'desc')->orderBy('status', 'desc')->orderBy('id', 'desc')->paginate(15)->appends($request->except('page'));
+    foreach ($userList as &$user) {
+      $user->transfer_enable = flowAutoShow($user->transfer_enable);
+      $user->used_flow = flowAutoShow($user->u + $user->d);
+      $user->expireWarning = $user->expire_time <= date('Y-m-d', strtotime("+ 30 days")) ? 1 : 0; // 临近过期提醒
+
+      // 流量异常警告
+      $time = date('Y-m-d H:i:s', time() - 24 * 60 * 60);
+      $totalTraffic = UserTrafficHourly::query()->where('user_id', $user->id)->where('node_id', 0)->where('created_at', '>=', $time)->sum('total');
+      $user->trafficWarning = $totalTraffic > (self::$config['traffic_ban_value'] * 1024 * 1024 * 1024) ? 1 : 0;
+    }
+
+    $view['userList'] = $userList;
+
+    return Response::view('admin/userList', $view);
+  }
+
+  //七日内活跃用户
+  public function userListTodayActiveInSeven(Request $request)
+  {
+    $query = User::query();
+    $query->where('t','>=',time()-(86400*7));
+
+    $userList = $query->orderBy('enable', 'desc')->orderBy('status', 'desc')->orderBy('id', 'desc')->paginate(15)->appends($request->except('page'));
+    foreach ($userList as &$user) {
+      $user->transfer_enable = flowAutoShow($user->transfer_enable);
+      $user->used_flow = flowAutoShow($user->u + $user->d);
+      $user->expireWarning = $user->expire_time <= date('Y-m-d', strtotime("+ 30 days")) ? 1 : 0; // 临近过期提醒
+
+      // 流量异常警告
+      $time = date('Y-m-d H:i:s', time() - 24 * 60 * 60);
+      $totalTraffic = UserTrafficHourly::query()->where('user_id', $user->id)->where('node_id', 0)->where('created_at', '>=', $time)->sum('total');
+      $user->trafficWarning = $totalTraffic > (self::$config['traffic_ban_value'] * 1024 * 1024 * 1024) ? 1 : 0;
+    }
+
+    $view['userList'] = $userList;
+
+    return Response::view('admin/userList', $view);
+  }
+
+  //当前在线
+  public function userListTodayActiveOnLine(Request $request)
+  {
+    $query = User::query();
+    $query->where('t','>=',time()-(1800*1));
+
+    $userList = $query->orderBy('enable', 'desc')->orderBy('status', 'desc')->orderBy('id', 'desc')->paginate(15)->appends($request->except('page'));
+    foreach ($userList as &$user) {
+      $user->transfer_enable = flowAutoShow($user->transfer_enable);
+      $user->used_flow = flowAutoShow($user->u + $user->d);
+      $user->expireWarning = $user->expire_time <= date('Y-m-d', strtotime("+ 30 days")) ? 1 : 0; // 临近过期提醒
+
+      // 流量异常警告
+      $time = date('Y-m-d H:i:s', time() - 24 * 60 * 60);
+      $totalTraffic = UserTrafficHourly::query()->where('user_id', $user->id)->where('node_id', 0)->where('created_at', '>=', $time)->sum('total');
+      $user->trafficWarning = $totalTraffic > (self::$config['traffic_ban_value'] * 1024 * 1024 * 1024) ? 1 : 0;
+    }
+
+    $view['userList'] = $userList;
+
+    return Response::view('admin/userList', $view);
+  }
+
 }

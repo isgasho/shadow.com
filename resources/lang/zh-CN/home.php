@@ -11,7 +11,7 @@ return [
     'subscribe_baned'                 => '您的订阅功能已被封禁，请联系管理员',
 
     // 菜单
-    'home'                            => '首页',
+    'home'                            => '后台首页',
     'services'                        => '购买服务',
     'traffic_log'                     => '流量日志',
     'invite_code'                     => '邀请码',
@@ -166,4 +166,6 @@ return [
     'profile'                         => '个人资料',
     'logout'                          => '退出',
     'promote'                         => '通过您的推广链接注册并激活的用户可获得 :traffic 流量奖励，同时您也可以获得 :traffic 流量奖励；当他们消费时，您可以获得他们每笔消费金额的 :referral_percent% 作为奖励。',
-];
+    'go_index'                        => '返回官网'
+
+    ];

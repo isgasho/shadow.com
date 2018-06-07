@@ -41,7 +41,8 @@ Route::group(['middleware' => ['forbidden', 'user', 'admin']], function () {
     Route::get('ticket/ticketList', 'TicketController@ticketList'); // 工单列表
     Route::any('ticket/replyTicket', 'TicketController@replyTicket'); // 回复工单
     Route::get('wSifGFeO5mQoCWB4/orderList', 'AdminController@orderList'); // 订单列表
-    Route::post('ticket/closeTicket', 'TicketController@closeTicket'); // 关闭工单
+  Route::get('wSifGFeO5mQoCWB4/orderListToday', 'AdminController@orderListToday'); // 今日订单
+  Route::post('ticket/closeTicket', 'TicketController@closeTicket'); // 关闭工单
     Route::get('wSifGFeO5mQoCWB4/inviteList', 'AdminController@inviteList'); // 邀请码列表
     Route::post('wSifGFeO5mQoCWB4/makeInvite', 'AdminController@makeInvite'); // 生成邀请码
     Route::get('wSifGFeO5mQoCWB4/exportInvite', 'AdminController@exportInvite'); // 导出邀请码
@@ -93,6 +94,11 @@ Route::group(['middleware' => ['forbidden', 'user', 'admin']], function () {
     Route::any("payment/callbackList", "PaymentController@callbackList"); // 有赞云支付回调日志
 
   Route::any("wSifGFeO5mQoCWB4/dd", "AdminController@dd"); // 测试
+
+  Route::get('wSifGFeO5mQoCWB4/userListToday', 'AdminController@userListToday'); // 账号列表
+  Route::get('wSifGFeO5mQoCWB4/userListTodayActiveInSeven', 'AdminController@userListTodayActiveInSeven'); // 账号列表
+  Route::get('wSifGFeO5mQoCWB4/userListTodayActiveOnLine', 'AdminController@userListTodayActiveOnLine'); // 账号列表
+
 
 });
 
