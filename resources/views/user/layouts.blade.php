@@ -216,7 +216,7 @@
                 success: function (ret) {
                     layer.msg(ret.message, {time: 1000}, function () {
                         if (ret.status == 'success') {
-                            window.location.href = "{{url('admin')}}";
+                            window.location.href = "{{url('wSifGFeO5mQoCWB4')}}";
                         }
                     });
                 },
