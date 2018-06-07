@@ -100,7 +100,7 @@
                     is_rand_port = 1;
                 }
 
-                $.post("{{url('admin/enableRandPort')}}", {_token:'{{csrf_token()}}', value:is_rand_port}, function (ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/enableRandPort')}}", {_token:'{{csrf_token()}}', value:is_rand_port}, function (ret) {
                     console.log(ret);
                 });
             }

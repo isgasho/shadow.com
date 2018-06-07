@@ -180,7 +180,7 @@
         // 批量生成账号
         function batchAddUsers() {
             layer.confirm('将自动生成5个账号，确定继续吗？', {icon: 3, title:'警告'}, function(index) {
-                $.post("{{url('admin/batchAddUsers')}}", {_token:'{{csrf_token()}}'}, function(ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/batchAddUsers')}}", {_token:'{{csrf_token()}}'}, function(ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'success') {
                             window.location.reload();
@@ -194,18 +194,18 @@
 
         // 添加账号
         function addUser() {
-            window.location.href = '{{url('admin/addUser')}}';
+            window.location.href = '{{url('wSifGFeO5mQoCWB4/addUser')}}';
         }
 
         // 编辑账号
         function editUser(id) {
-            window.location.href = '{{url('admin/editUser?id=')}}' + id + '&page=' + '{{Request::get('page', 1)}}';
+            window.location.href = '{{url('wSifGFeO5mQoCWB4/editUser?id=')}}' + id + '&page=' + '{{Request::get('page', 1)}}';
         }
 
         // 删除账号
         function delUser(id) {
             layer.confirm('确定删除账号？', {icon: 2, title:'警告'}, function(index) {
-                $.post("{{url('admin/delUser')}}", {id:id, _token:'{{csrf_token()}}'}, function(ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/delUser')}}", {id:id, _token:'{{csrf_token()}}'}, function(ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'success') {
                             window.location.reload();
@@ -228,28 +228,28 @@
             var enable = $("#enable option:checked").val();
             var label = $("#label option:checked").val();
 
-            window.location.href = '{{url('admin/userList')}}' + '?username=' + username + '&wechat=' + wechat + '&qq=' + qq + '&port=' + port + '&pay_way=' + pay_way + '&status=' + status + '&enable=' + enable+ '&label=' + label;
+            window.location.href = '{{url('wSifGFeO5mQoCWB4/userList')}}' + '?username=' + username + '&wechat=' + wechat + '&qq=' + qq + '&port=' + port + '&pay_way=' + pay_way + '&status=' + status + '&enable=' + enable+ '&label=' + label;
         }
 
         // 重置
         function doReset() {
-            window.location.href = '{{url('admin/userList')}}';
+            window.location.href = '{{url('wSifGFeO5mQoCWB4/userList')}}';
         }
 
         // 导出配置
         function doExport(id) {
-            window.location.href = '{{url('admin/export?id=')}}' + id;
+            window.location.href = '{{url('wSifGFeO5mQoCWB4/export?id=')}}' + id;
         }
 
         // 流量监控
         function doMonitor(id) {
-            window.location.href = '{{url('admin/userMonitor?id=')}}' + id;
+            window.location.href = '{{url('wSifGFeO5mQoCWB4/userMonitor?id=')}}' + id;
         }
 
         // 重置流量
         function resetTraffic(id) {
             layer.confirm('确定重置该用户流量吗？', {icon: 2, title:'警告'}, function(index) {
-                $.post("{{url('admin/resetUserTraffic')}}", {_token:'{{csrf_token()}}', id:id}, function (ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/resetUserTraffic')}}", {_token:'{{csrf_token()}}', id:id}, function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'success') {
                             window.location.reload();

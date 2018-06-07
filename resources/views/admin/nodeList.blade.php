@@ -118,7 +118,7 @@
     <script type="text/javascript">
         // 添加节点
         function addNode() {
-            window.location.href = '{{url('admin/addNode')}}';
+            window.location.href = '{{url('wSifGFeO5mQoCWB4/addNode')}}';
         }
 
         // 编辑节点

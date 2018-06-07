@@ -56,7 +56,7 @@
                                         @foreach($applyList as $apply)
                                             <tr>
                                                 <td> {{$apply->id}} </td>
-                                                <td> <a href="{{url('admin/editUser?id=' . $apply->user_id)}}" target="_blank">{{$apply->user->username}}</a> </td>
+                                                <td> <a href="{{url('wSifGFeO5mQoCWB4/editUser?id=' . $apply->user_id)}}" target="_blank">{{$apply->user->username}}</a> </td>
                                                 <td> {{$apply->amount}} </td>
                                                 <td> {{$apply->created_at}} </td>
                                                 <td>
@@ -108,7 +108,7 @@
     <script type="text/javascript">
         // 审核
         function doAudit(id) {
-            window.open('{{url('admin/applyDetail?id=')}}' + id);
+            window.open('{{url('wSifGFeO5mQoCWB4/applyDetail?id=')}}' + id);
         }
 
         // 搜索
@@ -116,12 +116,12 @@
             var username = $("#username").val();
             var status = $("#status option:checked").val();
 
-            window.location.href = '{{url('admin/applyList')}}' + '?username=' + username + '&status=' + status;
+            window.location.href = '{{url('wSifGFeO5mQoCWB4/applyList')}}' + '?username=' + username + '&status=' + status;
         }
 
         // 重置
         function do_reset() {
-            window.location.href = '{{url('admin/applyList')}}';
+            window.location.href = '{{url('wSifGFeO5mQoCWB4/applyList')}}';
         }
     </script>
 @endsection

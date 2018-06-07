@@ -89,18 +89,18 @@
     <script type="text/javascript">
         // 添加标签
         function addLabel() {
-            window.location.href = '{{url('admin/addLabel')}}';
+            window.location.href = '{{url('wSifGFeO5mQoCWB4/addLabel')}}';
         }
 
         // 编辑标签
         function editLabel(id) {
-            window.location.href = '{{url('admin/editLabel?id=')}}' + id + '&page=' + '{{Request::get('page', 1)}}';
+            window.location.href = '{{url('wSifGFeO5mQoCWB4/editLabel?id=')}}' + id + '&page=' + '{{Request::get('page', 1)}}';
         }
 
         // 删除标签
         function delLabel(id) {
             layer.confirm('确定删除标签？', {icon: 2, title:'警告'}, function(index) {
-                $.post("{{url('admin/delLabel')}}", {id:id, _token:'{{csrf_token()}}'}, function(ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/delLabel')}}", {id:id, _token:'{{csrf_token()}}'}, function(ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'success') {
                             window.location.reload();

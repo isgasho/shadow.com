@@ -103,7 +103,7 @@
     <script type="text/javascript">
         // 更改状态
         function setStatus(status) {
-            $.post("{{url('admin/setApplyStatus')}}", {_token:'{{csrf_token()}}', id:'{{$info->id}}', status:status}, function(ret){
+            $.post("{{url('wSifGFeO5mQoCWB4/setApplyStatus')}}", {_token:'{{csrf_token()}}', id:'{{$info->id}}', status:status}, function(ret){
                 layer.msg(ret.message, {time:1000}, function() {
                     window.location.reload();
                 });

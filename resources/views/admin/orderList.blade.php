@@ -137,12 +137,12 @@
             var pay_way = $("#pay_way").val();
             var status = $("#status").val();
 
-            window.location.href = '{{url('admin/orderList')}}' + '?username=' + username + '&is_expire=' + is_expire + '&is_coupon=' + is_coupon + '&pay_way=' + pay_way + '&status=' + status;
+            window.location.href = '{{url('wSifGFeO5mQoCWB4/orderList')}}' + '?username=' + username + '&is_expire=' + is_expire + '&is_coupon=' + is_coupon + '&pay_way=' + pay_way + '&status=' + status;
         }
 
         // 重置
         function doReset() {
-            window.location.href = '{{url('admin/orderList')}}';
+            window.location.href = '{{url('wSifGFeO5mQoCWB4/orderList')}}';
         }
     </script>
 @endsection

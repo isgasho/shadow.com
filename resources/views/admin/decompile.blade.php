@@ -59,7 +59,7 @@
             layer.confirm('确定继续反解析吗？', {icon: 2, title:'警告'}, function(index) {
                 $.ajax({
                     type: "POST",
-                    url: "{{url('admin/decompile')}}",
+                    url: "{{url('wSifGFeO5mQoCWB4/decompile')}}",
                     async: false,
                     data: {_token:_token, content: content},
                     dataType: 'json',
@@ -80,7 +80,7 @@
 
         // 下载
         function doDownload() {
-            window.location.href = '{{url('admin/download?type=2')}}';
+            window.location.href = '{{url('wSifGFeO5mQoCWB4/download?type=2')}}';
         }
     </script>
 @endsection

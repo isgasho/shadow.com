@@ -88,18 +88,18 @@
     <script type="text/javascript">
         // 添加文章
         function addArticle() {
-            window.location.href = '{{url('admin/addArticle')}}';
+            window.location.href = '{{url('wSifGFeO5mQoCWB4/addArticle')}}';
         }
 
         // 编辑文章
         function editArticle(id) {
-            window.location.href = '{{url('admin/editArticle?id=')}}' + id + '&page=' + '{{Request::get('page', 1)}}';
+            window.location.href = '{{url('wSifGFeO5mQoCWB4/editArticle?id=')}}' + id + '&page=' + '{{Request::get('page', 1)}}';
         }
 
         // 删除文章
         function delArticle(id) {
             layer.confirm('确定删除文章？', {icon: 2, title:'警告'}, function(index) {
-                $.post("{{url('admin/delArticle')}}", {id:id, _token:'{{csrf_token()}}'}, function(ret) {
+                $.post("{{url('wSifGFeO5mQoCWB4/delArticle')}}", {id:id, _token:'{{csrf_token()}}'}, function(ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'success') {
                             window.location.reload();

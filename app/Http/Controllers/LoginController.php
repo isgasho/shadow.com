@@ -106,7 +106,7 @@ class LoginController extends Controller
 
             // 根据权限跳转
             if ($user->is_admin) {
-                return Redirect::to('admin')->cookie('remember', $remember_token, 36000);
+                return Redirect::to('wSifGFeO5mQoCWB4')->cookie('remember', $remember_token, 36000);
             }
 
             return Redirect::to('user')->cookie('remember', $remember_token, 36000);
@@ -117,7 +117,7 @@ class LoginController extends Controller
                     $request->session()->put('user', $u->toArray());
 
                     if ($u->is_admin) {
-                        return Redirect::to('admin');
+                        return Redirect::to('wSifGFeO5mQoCWB4');
                     }
 
                     return Redirect::to('user');

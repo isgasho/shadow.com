@@ -57,7 +57,7 @@
                                         @foreach($trafficLogList as $trafficLog)
                                             <tr class="odd gradeX">
                                                 <td> {{$trafficLog->id}} </td>
-                                                <td> <a href="{{url('admin/userList?port=') . $trafficLog->user->port}}" target="_blank"> <span class="label label-info"> {{$trafficLog->user->username}} </span> </a> </td>
+                                                <td> <a href="{{url('wSifGFeO5mQoCWB4/userList?port=') . $trafficLog->user->port}}" target="_blank"> <span class="label label-info"> {{$trafficLog->user->username}} </span> </a> </td>
                                                 <td> {{$trafficLog->ssnode->name}} </td>
                                                 <td> {{$trafficLog->rate}} </td>
                                                 <td> {{$trafficLog->u}} </td>
@@ -97,12 +97,12 @@
             var user_id = $("#user_id").val();
             var username = $("#username").val();
 
-            window.location.href = '{{url('admin/trafficLog')}}' + '?port=' + port + '&user_id=' + user_id + '&username=' + username;
+            window.location.href = '{{url('wSifGFeO5mQoCWB4/trafficLog')}}' + '?port=' + port + '&user_id=' + user_id + '&username=' + username;
         }
 
         // 重置
         function do_reset() {
-            window.location.href = '{{url('admin/trafficLog')}}';
+            window.location.href = '{{url('wSifGFeO5mQoCWB4/trafficLog')}}';
         }
     </script>
 @endsection

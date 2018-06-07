@@ -111,7 +111,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "{{url('admin/makeInvite')}}",
+                url: "{{url('wSifGFeO5mQoCWB4/makeInvite')}}",
                 async: false,
                 data: {_token:_token},
                 dataType: 'json',
@@ -129,7 +129,7 @@
 
         // 导出邀请码
         function exportInvite() {
-            window.location.href = '{{url('admin/exportInvite')}}';
+            window.location.href = '{{url('wSifGFeO5mQoCWB4/exportInvite')}}';
         }
     </script>
 @endsection

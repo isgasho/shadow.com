@@ -79,14 +79,14 @@
 
             $.ajax({
                 type: "POST",
-                url: "{{url('admin/editGroup')}}",
+                url: "{{url('wSifGFeO5mQoCWB4/editGroup')}}",
                 async: false,
                 data: {_token:_token, id:'{{$group->id}}', name:name, level:level},
                 dataType: 'json',
                 success: function (ret) {
                     layer.msg(ret.message, {time:1000}, function() {
                         if (ret.status == 'success') {
-                            window.location.href = '{{url('admin/groupList')}}';
+                            window.location.href = '{{url('wSifGFeO5mQoCWB4/groupList')}}';
                         }
                     });
                 }
