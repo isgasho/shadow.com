@@ -175,3 +175,11 @@ DB_PASSWORD=root
 'username' => 'xxx@qq.com',
 'password' => 'xxxxxx',
 ````
+
+
+#### 常见问题
+```$xslt
+1.提示找不到 `App\Sms\REST`类
+
+    在根目录下运行`composer dumpautoload`即可
+```

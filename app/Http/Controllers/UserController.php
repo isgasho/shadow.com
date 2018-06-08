@@ -179,21 +179,7 @@ class UserController extends Controller
             $smscode = $request->get('smscode');
             $u_contract_1 = $request->get('u_contract_1');
 
-            //手机号
-            if($u_contract_0){
-              $codeData = DB::table('smscode')->select('c_code')->where('c_phone','=',$u_contract_1)->orderBy('c_id','DESC')->first();
-              $mysqlCode = $codeData['c_code'];
-              if($mysqlCode != $smscode){
-                $request->session()->flash('errorMsg', '手机验证码错误');
-                return Redirect::to('user/profile#tab_2');
-              }else{
-                $ret = User::query()->where('id', $user['id'])->update(['u_contract_0' => $u_contract_0]);
-                if($ret){
-                  $request->session()->flash('successMsg', '修改成功');
-                  return Redirect::to('user/profile#tab_2');
-                }
-              }
-            }
+
 
           // 修改密码
             if ($old_password && $new_password) {
@@ -223,12 +209,28 @@ class UserController extends Controller
                 }
             }
 
+
             // 修改联系方式
-            if ($wechat || $qq) {
-                if (empty(clean($wechat)) && empty(clean($qq))) {
+            if ($wechat || $qq || $u_contract_0) {
+                if (empty(clean($wechat)) && empty(clean($qq)) && empty(clean($u_contract_0))) {
                     $request->session()->flash('errorMsg', '修改失败');
 
                     return Redirect::to('user/profile#tab_2');
+                }
+                //手机号
+                if($u_contract_0){
+                  $codeData = DB::table('smscode')->select('c_code')->where('c_phone','=',$u_contract_0)->orderBy('c_id','DESC')->first();
+                  $mysqlCode = $codeData['c_code'];
+                  if($mysqlCode != $smscode){
+                    $request->session()->flash('errorMsg', '手机验证码错误');
+                    return Redirect::to('user/profile#tab_2');
+                  }else{
+                    $ret = User::query()->where('id', $user['id'])->update(['u_contract_0' => $u_contract_0]);
+                    if(!$ret){
+                      $request->session()->flash('errorMsg', '修改失败');
+                      return Redirect::to('user/profile#tab_2');
+                    }
+                  }
                 }
 
                 $ret = User::query()->where('id', $user['id'])->update(['wechat' => $wechat, 'qq' => $qq]);
