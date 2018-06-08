@@ -76,7 +76,7 @@
                                                 @if($info->u_phone_status == 1)
                                                     <div class="form-group">
                                                         <label class="control-label">邮箱</label>
-                                                        <input type="text" class="form-control" name="u_contract_1" value="{{$info->u_contract_1}}" id="u_contract_1" required disabled="disabled"/>
+                                                        <input type="text" class="form-control" name="u_contract_1" value="{{$info->u_contract_1}}" id="u_contract_1" required/>
                                                         <input type="hidden" name="_token" value="{{csrf_token()}}" />
                                                     </div>
                                                 @else
