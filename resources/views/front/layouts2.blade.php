@@ -754,14 +754,18 @@
                             <li>
                                 <a href="/front/support">帮助中心</a>
                             </li>
+                            @if(Session::has('user'))
                             <li>
-                                @if(Session::has('user'))
-                                    <a href="/user"><span>我的账户</span></a>
-                                @else
-                                    <a href="/login"><span>登陆</span></a>
-                                    <a href="/register"><span>注册</span></a>
-                                @endif
+                                <a href="/user"><span>我的账户</span></a>
                             </li>
+                            @else
+                            <li>
+                                <a href="/login"><span>登陆</span></a>
+                            </li>
+                            <li>
+                                <a href="/register"><span>注册</span></a>
+                            </li>
+                            @endif
                         </ul>
                     </div>
                 </div>
