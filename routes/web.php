@@ -12,7 +12,7 @@ Route::group(['middleware' => ['forbidden']], function () {
     Route::any('reset/{token}', 'UserController@reset'); // 重设密码
     Route::any('activeUser', 'UserController@activeUser'); // 激活账号
     Route::get('active/{token}', 'UserController@active'); // 激活账号
-  Route::get('active_profile/{token}', 'UserController@active'); // 激活账号
+  Route::get('active_profile/{token}', 'UserController@active_profile'); // 激活账号
   Route::get('free', 'UserController@free'); // 免费邀请码
 });
 

@@ -238,24 +238,24 @@ class UserController extends Controller
                   // 生成激活账号的地址
                   $token = md5(self::$config['website_name'] . $u_contract_1 . microtime());
                   $verify = new Verify();
-                  $verify->user_id = $user->id;
+                  $verify->user_id = $user['id'];
                   $verify->username = $u_contract_1;
                   $verify->token = $token;
                   $verify->status = 0;
                   $verify->save();
 
-                  $activeUserUrl = self::$config['website_url'] . '/active/' . $token;
+                  $activeUserUrl = self::$config['website_url'] . '/active_profile/' . $token;
                   $title = '邮箱绑定';
                   $content = '请求地址：' . $activeUserUrl;
 
                   try {
                     Mail::to($u_contract_1)->send(new activeUser(self::$config['website_name'], $activeUserUrl));
-                    $this->sendEmailLog($user->id, $title, $content);
+                    $this->sendEmailLog($user['id'], $title, $content);
                   } catch (\Exception $e) {
-                    $this->sendEmailLog($user->id, $title, $content, 0, $e->getMessage());
+                    $this->sendEmailLog($user['id'], $title, $content, 0, $e->getMessage());
                   }
-
-                  $request->session()->flash('regSuccessMsg', '保存成功：绑定邮件已发送，请查看邮箱');
+                  $ret = User::query()->where('id', $user['id'])->update(['u_contract_1' => $u_contract_1]);
+                  $haveEmail = 1;
                 }
 
                 $ret = User::query()->where('id', $user['id'])->update(['wechat' => $wechat, 'qq' => $qq]);
@@ -264,8 +264,11 @@ class UserController extends Controller
 
                     return Redirect::to('user/profile#tab_2');
                 } else {
+                  if($haveEmail){
+                    $request->session()->flash('regSuccessMsg', '保存成功：绑定邮件已发送，请查看邮箱');
+                  }else{
                     $request->session()->flash('successMsg', '修改成功');
-
+                  }
                     return Redirect::to('user/profile#tab_2');
                 }
             }
@@ -708,8 +711,8 @@ class UserController extends Controller
       $request->session()->flash('errorMsg', '该链接已失效');
 
       return Response::view('user/active');
-    } else if ($verify->user->status != 0) {
-      $request->session()->flash('errorMsg', '该账号无需激活.');
+    } else if ($verify->user->u_email_status == 1) {
+      $request->session()->flash('errorMsg', '该邮箱已激活.');
 
       return Response::view('user/active');
     } else if (time() - strtotime($verify->created_at) >= 1800) {
