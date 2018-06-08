@@ -79,7 +79,7 @@
                                                     <div class="row" style="margin-bottom: 15px">
                                                         <div class="col-sm-8 col-md-8 col-xs-8">
                                                             <label class="control-label">手机号</label>
-                                                            <input type="text" class="form-control" name="u_contract_1" value="{{$info->u_contract_1}}" id="u_contract_1" required />
+                                                            <input type="text" class="form-control" name="u_contract_0" value="{{$info->u_contract_0}}" id="u_contract_0" required />
                                                             <input type="hidden" name="_token" value="{{csrf_token()}}" />
                                                         </div>
                                                         <div class="col-sm-4 col-md-4 col-xs-4">

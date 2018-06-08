@@ -175,13 +175,24 @@ class UserController extends Controller
             $protocol = $request->get('protocol');
             $obfs = $request->get('obfs');
 
-            $u_contract_1 = $request->get('u_contract_1');
+            $u_contract_0 = $request->get('u_contract_0');
             $smscode = $request->get('smscode');
-            $u_contract_2 = $request->get('u_contract_2');
+            $u_contract_1 = $request->get('u_contract_1');
 
-            if($u_contract_1){
+            //手机号
+            if($u_contract_0){
               $codeData = DB::table('smscode')->select('c_code')->where('c_phone','=',$u_contract_1)->orderBy('c_id','DESC')->first();
               $mysqlCode = $codeData['c_code'];
+              if($mysqlCode != $smscode){
+                $request->session()->flash('errorMsg', '手机验证码错误');
+                return Redirect::to('user/profile#tab_2');
+              }else{
+                $ret = User::query()->where('id', $user['id'])->update(['u_contract_0' => $u_contract_0]);
+                if($ret){
+                  $request->session()->flash('successMsg', '修改成功');
+                  return Redirect::to('user/profile#tab_2');
+                }
+              }
             }
 
           // 修改密码

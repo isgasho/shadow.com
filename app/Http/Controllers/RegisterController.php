@@ -462,9 +462,9 @@ class RegisterController extends Controller
         $data['c_country'] = $area['country'];
         $data['c_city'] = $area['city'];
         $data['c_time'] = time();
+        $data['c_back'] = self::DoSend($data['c_phone'],['666','888'],1);
         $ret = \DB::table('smscode')->insert($data);
         if($ret){
-          self::DoSend($data['c_phone'],['666','888'],1);
           return 200;
         }else{
           return 400;//存储失败
@@ -521,22 +521,23 @@ class RegisterController extends Controller
     $rest->setAppId($appId);
 
     // 发送模板短信
-    echo "Sending TemplateSMS to $to <br/>";
+//    echo "Sending TemplateSMS to $to <br/>";
     $result = $rest->sendTemplateSMS($to,$datas,$tempId);
     if($result == NULL ) {
       echo "result error!";
       die;
     }
     if($result->statusCode!=0) {
-      echo "error code :" . $result->statusCode . "<br>";
-      echo "error msg :" . $result->statusMsg . "<br>";
+//      echo "error code :" . $result->statusCode . "<br>";
+      return "error msg :" . $result->statusMsg . "<br>";
       //TODO 添加错误处理逻辑
     }else{
-      echo "Sendind TemplateSMS success!<br/>";
+//      echo "Sendind TemplateSMS success!<br/>";
       // 获取返回信息
       $smsmessage = $result->TemplateSMS;
-      echo "dateCreated:".$smsmessage->dateCreated."<br/>";
-      echo "smsMessageSid:".$smsmessage->smsMessageSid."<br/>";
+//      echo "dateCreated:".$smsmessage->dateCreated."<br/>";
+//      echo "smsMessageSid:".$smsmessage->smsMessageSid."<br/>";
+      return 'Success';
       //TODO 添加成功处理逻辑
     }
   }
