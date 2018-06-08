@@ -774,7 +774,12 @@
                                 <a href="/front/support">帮助中心</a>
                             </li>
                             <li>
-                                <a href="/admin">我的账户</a>
+                                @if(Session::has('user'))
+                                    <a href="/user">我的账户</a>
+                                @else
+                                    <a href="/login">登陆</a>
+                                    <a href="/register">注册</a>
+                                @endif
                             </li>
                         </ul>
                     </div>

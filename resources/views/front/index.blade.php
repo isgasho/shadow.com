@@ -33,7 +33,7 @@
                         <h1 class="c-bw-1 mb-5 mb-sm-6"><span>访问无限互联网!</span></h1>
                         <p class="c-bw-1 fwm mb-5 mb-sm-6"><span>享受3年的高速网络，价格每月最低达到2.75美元（大约17元）</span></p><a
                                 class="Button Button--primary Button--large mb-6 mb-sm-7 mb-md-6 mt-3 mt-md-0"
-                                href="/zh/order/?coupon=3ydeal" role="button" tabIndex="0"><span>立即获得穿云梯</span></a>
+                                href="/front/order" role="button" tabIndex="0"><span>立即获得穿云梯</span></a>
                         <div><a class="Link small fwm Link--light" href="#scroll-down" data-scroller="true"><span
                                         class="mr-2"><img
                                             src="https://s1.nordwebsite.net/nordvpn/3.32.0/images/global/icons/16/scroll-down.svg"

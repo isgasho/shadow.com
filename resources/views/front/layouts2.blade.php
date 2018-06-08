@@ -756,10 +756,10 @@
                             </li>
                             <li>
                                 @if(Session::has('user'))
-                                    <a class="Button Button--primary Button--small" href="/user" role="button" tabindex="0"><span>我的账户</span></a>
+                                    <a href="/user"><span>我的账户</span></a>
                                 @else
-                                    <a class="Button Button--primary Button--small" href="/login" role="button" tabindex="0"><span>登陆</span></a>
-                                    <a class="Button Button--primary Button--small" href="/register" role="button" tabindex="0"><span>注册</span></a>
+                                    <a href="/login"><span>登陆</span></a>
+                                    <a href="/register"><span>注册</span></a>
                                 @endif
                             </li>
                         </ul>
