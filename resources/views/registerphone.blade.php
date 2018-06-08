@@ -41,7 +41,7 @@
         <a href="{{url('register')}}">邮件注册请点击</a>
     </nav>
     <!-- BEGIN REGISTRATION FORM -->
-    <form id="myForm" class="register-form" action="{{url('register2')}}" method="post" style="display: block;">
+    <form class="register-form" action="{{url('register2')}}" method="post" style="display: block;">
         @if($is_register)
             @if(Session::get('errorMsg'))
                 <div class="alert alert-danger">
@@ -49,12 +49,21 @@
                     <span> {{Session::get('errorMsg')}} </span>
                 </div>
             @endif
+            <div class="row" style="margin-bottom: 15px">
+                <div class="col-md-7 col-sm-7 col-xs-7">
+                    <label class="control-label visible-ie8 visible-ie9">{{trans('register.username')}}</label>
+                    <input id="username" class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="{{trans('register.phone_placeholder')}}" name="username" value="{{Request::old('username')}}" required />
+                    <input type="hidden" name="register_token" value="{{Session::get('register_token')}}" />
+                    <input type="hidden" name="_token" value="{{csrf_token()}}" />
+                    <input type="hidden" name="aff" value="{{Session::get('register_aff')}}" />
+                </div>
+                <div class="col-md-5 col-sm-5 col-xs-5" style="">
+                    <button id="send" type="button" class="btn red" style="height: 43px" onclick="Sms()">点击发送验证码</button>
+                </div>
+            </div>
             <div class="form-group">
-                <label class="control-label visible-ie8 visible-ie9">{{trans('register.username')}}</label>
-                <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="{{trans('register.phone_placeholder')}}" name="username" value="{{Request::old('username')}}" required />
-                <input type="hidden" name="register_token" value="{{Session::get('register_token')}}" />
-                <input type="hidden" name="_token" value="{{csrf_token()}}" />
-                <input type="hidden" name="aff" value="{{Session::get('register_aff')}}" />
+                <label class="control-label visible-ie8 visible-ie9">{{trans('register.code')}}</label>
+                <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="{{trans('register.code')}}" name="smscode" required />
             </div>
             <div class="form-group">
                 <label class="control-label visible-ie8 visible-ie9">{{trans('register.password')}}</label>
@@ -138,6 +147,27 @@
 //                });
             }
         });
+    }
+
+    function Sms() {
+        var phone = $("input[name='username']").val();
+        // console.log(phone)
+        $("#send").attr('disabled','disabled');
+
+        $.get('sendSms',{phone:phone});
+
+        var time = 60;
+        var codeTimes=setInterval(function() {
+            if(time<=0){
+                clearInterval(codeTimes);
+                $("#send").html("点击获取验证码");
+                $("#send").attr("disabled",false);
+            }else{
+                time--;
+                var val=time+'后重获';
+                $("#send").html(val);
+            }
+        },1000);
     }
 </script>
 <!-- 统计 -->

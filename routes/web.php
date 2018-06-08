@@ -149,6 +149,7 @@ Route::get('front/privacy', 'FrontController@privacy'); //VPN应用--关于我�
 Route::get('front/survice', 'FrontController@survice'); //VPN应用--关于我们
 
 Route::get('sms', 'RegisterController@test2'); //sms测试
+Route::get('sendSms', 'RegisterController@sendSms'); //sms测试
 
 
 

@@ -19,4 +19,5 @@ return [
 
     'phone'                => '手机号',
     'phone_placeholder'                => '请输入手机号',
+    'code'                 => '验证码'
     ];

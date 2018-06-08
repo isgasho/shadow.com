@@ -249,6 +249,7 @@ class RegisterController extends Controller
       $cacheKey = 'register_times_' . md5($request->getClientIp()); // 注册限制缓存key
 
       if ($request->method() == 'POST') {
+        $smscode = trim($request->get('smscode'));
         $username = trim($request->get('username'));
         $password = trim($request->get('password'));
         $repassword = trim($request->get('repassword'));
@@ -257,6 +258,11 @@ class RegisterController extends Controller
         $register_token = $request->get('register_token');
         $aff = intval($request->get('aff', 0));
 
+        $smsData = \DB::table('smscode')->where('c_phone','=',$username)->orderBy('c_id','DESC')->first();
+        if($smscode != $smsData->c_code){
+          $request->session()->flash('errorMsg', '短信验证码错误');
+          return Redirect::back()->withInput();
+        }
         // 防止重复提交
         $session_register_token = $request->session()->get('register_token');
         if (empty($register_token) || $register_token != $session_register_token) {
@@ -283,10 +289,6 @@ class RegisterController extends Controller
           $request->session()->flash('errorMsg', '两次输入密码不一致，请重新输入');
 
           return Redirect::back()->withInput($request->except(['password', 'repassword']));
-        } else if (false === filter_var($username, FILTER_VALIDATE_EMAIL)) {
-          $request->session()->flash('errorMsg', '用户名必须是合法邮箱，请重新输入');
-
-          return Redirect::back()->withInput();
         }
 
         // 是否校验验证码
@@ -374,6 +376,7 @@ class RegisterController extends Controller
         $user->expire_time = date('Y-m-d H:i:s', strtotime("+" . self::$config['default_days'] . " days"));
         $user->reg_ip = $request->getClientIp();
         $user->referral_uid = $referral_uid;
+        $user->status = 1;
         $user->save();
 
         // 注册次数+1
@@ -401,41 +404,7 @@ class RegisterController extends Controller
           Invite::query()->where('id', $code->id)->update(['fuid' => $user->id, 'status' => 1]);
         }
 
-        // 发送邮件
-        if (self::$config['is_active_register']) {
-          // 生成激活账号的地址
-          $token = md5(self::$config['website_name'] . $username . microtime());
-          $verify = new Verify();
-          $verify->user_id = $user->id;
-          $verify->username = $username;
-          $verify->token = $token;
-          $verify->status = 0;
-          $verify->save();
-
-          $activeUserUrl = self::$config['website_url'] . '/active/' . $token;
-          $title = '注册激活';
-          $content = '请求地址：' . $activeUserUrl;
-
-          try {
-            Mail::to($username)->send(new activeUser(self::$config['website_name'], $activeUserUrl));
-            $this->sendEmailLog($user->id, $title, $content);
-          } catch (\Exception $e) {
-            $this->sendEmailLog($user->id, $title, $content, 0, $e->getMessage());
-          }
-
-          $request->session()->flash('regSuccessMsg', '注册成功：激活邮件已发送，请查看邮箱');
-        } else {
-          // 如果不需要激活，则直接给推荐人加流量
-          if ($referral_uid) {
-            $transfer_enable = self::$config['referral_traffic'] * 1048576;
-
-            User::query()->where('id', $referral_uid)->increment('transfer_enable', $transfer_enable);
-            User::query()->where('id', $referral_uid)->update(['enable' => 1]);
-          }
-
-          $request->session()->flash('regSuccessMsg', '注册成功');
-        }
-
+        $request->session()->flash('regSuccessMsg', '注册成功');
         return Redirect::to('login');
       } else {
         $request->session()->put('register_token', makeRandStr(16));
@@ -457,38 +426,7 @@ class RegisterController extends Controller
       }
     }
 
-    public function test($to,$datas,$tempId){
-      $accountSid= env('SID');
-      $accountToken= env('TOKEN');
-      $appId= env('SMSAPPID');
-      $serverIP= env('IP');
-      $serverPort= env('PORT');
-      $softVersion= env('VERSION');
-      // 初始化REST SDK
-      $rest = new REST($serverIP,$serverPort,$softVersion);
-      $rest->setAccount($accountSid,$accountToken);
-      $rest->setAppId($appId);
 
-      // 发送模板短信
-      echo "Sending TemplateSMS to $to <br/>";
-      $result = $rest->sendTemplateSMS($to,$datas,$tempId);
-      if($result == NULL ) {
-        echo "result error!";
-        die;
-      }
-      if($result->statusCode!=0) {
-        echo "error code :" . $result->statusCode . "<br>";
-        echo "error msg :" . $result->statusMsg . "<br>";
-        //TODO 添加错误处理逻辑
-      }else{
-        echo "Sendind TemplateSMS success!<br/>";
-        // 获取返回信息
-        $smsmessage = $result->TemplateSMS;
-        echo "dateCreated:".$smsmessage->dateCreated."<br/>";
-        echo "smsMessageSid:".$smsmessage->smsMessageSid."<br/>";
-        //TODO 添加成功处理逻辑
-      }
-    }
 
     public function test2(){
       $phone = env('TESTPHONE');
@@ -496,4 +434,107 @@ class RegisterController extends Controller
       return $data;
     }
 
+  public function sendSms(Request $request){
+      $data['c_phone'] = $request->input('phone');
+      if(strlen($data['c_phone'])!=11){
+        return 405;//手机号码错误
+      }else{
+        //同一个号码一小时5次限制
+        $count1 = \DB::table('smscode')->where($data)->where('c_time','>=',time()-3600)->count();
+        if($count1 > 10){
+          return 406;
+        }
+        //同一个ip一小时10次限制
+        $ip =  self::getip();
+        $area = self::getCity($ip);
+        $f['c_ip'] = $ip;
+        $count1 = \DB::table('smscode')->where($f)->where('c_time','>=',time()-3600)->count();
+        if($count1 > 20){
+          return 407;
+        }
+
+        $data['c_ip'] = $ip;
+        $randStr = str_shuffle('ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890');
+        $data['c_code'] = substr($randStr,0,6);
+        $data['c_country'] = $area['country'];
+        $data['c_city'] = $area['city'];
+        $data['c_time'] = time();
+        $ret = \DB::table('smscode')->insert($data);
+        if($ret){
+          self::DoSend($data['c_phone'],['666','888'],1);
+          return 200;
+        }else{
+          return 400;//存储失败
+        }
+      }
+
+
+  }
+
+  /**
+   * 获取ip地址
+   */
+  protected function getip(){
+    if (getenv("HTTP_CLIENT_IP") && strcasecmp(getenv("HTTP_CLIENT_IP"), "unknown"))
+      $ip = getenv("HTTP_CLIENT_IP");
+    else if (getenv("HTTP_X_FORWARDED_FOR") && strcasecmp(getenv("HTTP_X_FORWARDED_FOR"), "unknown"))
+      $ip = getenv("HTTP_X_FORWARDED_FOR");
+    else if (getenv("REMOTE_ADDR") && strcasecmp(getenv("REMOTE_ADDR"), "unknown"))
+      $ip = getenv("REMOTE_ADDR");
+    else if (isset($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR'] && strcasecmp($_SERVER['REMOTE_ADDR'], "unknown"))
+      $ip = $_SERVER['REMOTE_ADDR'];
+    else
+      $ip = "unknown";
+    return($ip);
+  }
+
+  /**
+   * 获取地址
+   */
+  protected function getCity($ip = '')
+  {
+    $url="http://ip.taobao.com/service/getIpInfo.php?ip=".$ip;
+    $ip=json_decode(file_get_contents($url));
+    if((string)$ip->code=='1'){
+      return false;
+    }
+    $data = (array)$ip->data;
+    return $data;
+  }
+
+  /**
+   * 发送验证码
+   */
+  public function DoSend($to,$datas,$tempId){
+    $accountSid= env('SID');
+    $accountToken= env('TOKEN');
+    $appId= env('SMSAPPID');
+    $serverIP= env('IP');
+    $serverPort= env('PORT');
+    $softVersion= env('VERSION');
+    // 初始化REST SDK
+    $rest = new REST($serverIP,$serverPort,$softVersion);
+    $rest->setAccount($accountSid,$accountToken);
+    $rest->setAppId($appId);
+
+    // 发送模板短信
+    echo "Sending TemplateSMS to $to <br/>";
+    $result = $rest->sendTemplateSMS($to,$datas,$tempId);
+    if($result == NULL ) {
+      echo "result error!";
+      die;
+    }
+    if($result->statusCode!=0) {
+      echo "error code :" . $result->statusCode . "<br>";
+      echo "error msg :" . $result->statusMsg . "<br>";
+      //TODO 添加错误处理逻辑
+    }else{
+      echo "Sendind TemplateSMS success!<br/>";
+      // 获取返回信息
+      $smsmessage = $result->TemplateSMS;
+      echo "dateCreated:".$smsmessage->dateCreated."<br/>";
+      echo "smsMessageSid:".$smsmessage->smsMessageSid."<br/>";
+      //TODO 添加成功处理逻辑
+    }
+  }
 }
