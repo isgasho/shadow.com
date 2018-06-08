@@ -112,7 +112,7 @@
             <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
             <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
             <ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-                <li class="nav-item start {{in_array(Request::path(), ['/', 'user', 'user/subscribe', 'user/profile', 'user/article']) ? 'active open' : ''}}">
+                <li class="nav-item start {{in_array(Request::path(), ['/', 'user', 'user/subscribe', 'user/article']) ? 'active open' : ''}}">
                     <a href="{{url('user')}}" class="nav-link nav-toggle">
                         <i class="icon-home"></i>
                         <span class="title">{{trans('home.home')}}</span>
@@ -129,6 +129,12 @@
                     <a href="{{url('/')}}" class="nav-link nav-toggle">
                         <i class="icon-user-follow"></i>
                         <span class="title">{{trans('home.go_index')}}</span>
+                    </a>
+                </li>
+                <li class="nav-item {{in_array(Request::path(), ['user/profile']) ? 'active open' : ''}}">
+                    <a href="{{url('user/profile')}}" class="nav-link nav-toggle">
+                        <i class="icon-user-follow"></i>
+                        <span class="title">{{trans('home.profile_sidebar')}}</span>
                     </a>
                 </li>
                 <li class="nav-item {{in_array(Request::path(), ['user/goodsList', 'user/addOrder']) || Request::segment(1) == 'payment' ? 'active open' : ''}}">

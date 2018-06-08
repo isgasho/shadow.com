@@ -25,8 +25,7 @@
                                 <div class="pt-11 py-sm-11 py-md-14 my-auto col-sm-6 col-xs-12">
                                     <h1 class="Title h2 mb-5 mb-sm-6 text-xs-center">下载 iOS 版 NordVPN</h1>
                                     <p class="Text mb-5 mb-sm-6 text-xs-center fwm">只需点击几下，即可保障您的在线隐私和安全。</p>
-                                    <div class="mb-5 mb-sm-6"><a class="Button Button--primary Button--large Button--block-xs d-sm-inline-block" href="https://aki-k.tlnk.io/serve?action=click&amp;publisher_id=358733&amp;site_id=127385&amp;destination_id=503977&amp;my_site=nordwebsite.net&amp;sub1=&amp;sub2=&amp;my_campaign=download_ios" role="button" tabindex="0">下载</a></div>
-
+                                    <div class="mb-5 mb-sm-6"><a class="Button Button--primary Button--large Button--block-xs d-sm-inline-block" href="" role="button" tabindex="0">暂无</a></div>
                                 </div>
                                 <div class="my-auto col-sm-6 col-xs-12"><img src="https://s1.nordwebsite.net/nordvpn/3.85.0/images/global/devices/banner-mobile-ios-map-light.png" srcset="https://s1.nordwebsite.net/nordvpn/3.85.0/images/global/devices/banner-mobile-ios-map-light.png 1x, https://s1.nordwebsite.net/nordvpn/3.85.0/images/global/devices/banner-mobile-ios-map-light@2x.png 2x" class="hidden-xs p-lg-6 my-6 my-sm-0 img-responsive" alt="iOS"><img src="https://s1.nordwebsite.net/nordvpn/3.85.0/images/global/devices/banner-mobile-ios-map-light.png" srcset="https://s1.nordwebsite.net/nordvpn/3.85.0/images/global/devices/banner-mobile-ios-map-light.png 1x, https://s1.nordwebsite.net/nordvpn/3.85.0/images/global/devices/banner-mobile-ios-map-light@2x.png 2x" class="py-6 p-lg-6 visible-xs center-block img-responsive" alt="iOS"></div>
                             </div>

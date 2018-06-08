@@ -175,7 +175,16 @@ class UserController extends Controller
             $protocol = $request->get('protocol');
             $obfs = $request->get('obfs');
 
-            // 修改密码
+            $u_contract_1 = $request->get('u_contract_1');
+            $smscode = $request->get('smscode');
+            $u_contract_2 = $request->get('u_contract_2');
+
+            if($u_contract_1){
+              $codeData = DB::table('smscode')->select('c_code')->where('c_phone','=',$u_contract_1)->orderBy('c_id','DESC')->first();
+              $mysqlCode = $codeData['c_code'];
+            }
+
+          // 修改密码
             if ($old_password && $new_password) {
                 $old_password = md5(trim($old_password));
                 $new_password = md5(trim($new_password));

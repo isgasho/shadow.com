@@ -26,12 +26,8 @@
                                     <h1 class="Title h2 mb-5 mb-sm-6 text-xs-center">下载适用您 Mac 设备的 NordVPN应用程序</h1>
                                     <p class="Text mb-5 mb-sm-6 text-xs-center fwm">保障互联网上的安全和隐私。</p>
                                     <div class="mb-5 mb-sm-4">
-                                        <a class="Button Button--primary Button--large Button--block-xs d-sm-inline-block mb-5 mb-sm-4 mr-sm-4" href="https://itunes.apple.com/us/app/vpn-by-nordvpn-web-security/id1116599239?mt=12" role="button" tabindex="0" target="_blank">下载</a>
-
-
-
+                                        <a class="Button Button--primary Button--large Button--block-xs d-sm-inline-block mb-5 mb-sm-4 mr-sm-4" href="/download_vpn/macOs/ShadowsocksX-R-v1.3.9.zip" role="button" tabindex="0" target="_blank">下载</a>
                                     </div>
-
                                 </div>
                                 <div class="my-auto col-sm-6 col-xs-12"><img src="https://s1.nordwebsite.net/nordvpn/3.85.0/images/global/devices/banner-laptop-macos-map-light.png" srcset="https://s1.nordwebsite.net/nordvpn/3.85.0/images/global/devices/banner-laptop-macos-map-light.png 1x, https://s1.nordwebsite.net/nordvpn/3.85.0/images/global/devices/banner-laptop-macos-map-light@2x.png 2x" class="hidden-xs p-lg-6 my-6 my-sm-0 img-responsive" alt="macOS"><img src="https://s1.nordwebsite.net/nordvpn/3.85.0/images/global/devices/banner-laptop-macos-map-light.png" srcset="https://s1.nordwebsite.net/nordvpn/3.85.0/images/global/devices/banner-laptop-macos-map-light.png 1x, https://s1.nordwebsite.net/nordvpn/3.85.0/images/global/devices/banner-laptop-macos-map-light@2x.png 2x" class="py-6 p-lg-6 visible-xs center-block img-responsive" alt="macOS"></div>
                             </div>

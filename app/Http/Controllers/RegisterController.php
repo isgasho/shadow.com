@@ -161,7 +161,8 @@ class RegisterController extends Controller
             $user->expire_time = date('Y-m-d H:i:s', strtotime("+" . self::$config['default_days'] . " days"));
             $user->reg_ip = $request->getClientIp();
             $user->referral_uid = $referral_uid;
-            $user->save();
+            $user->u_contract_1 = $username;//记录邮箱
+          $user->save();
 
             // 注册次数+1
             if ($user->id) {
@@ -376,7 +377,9 @@ class RegisterController extends Controller
         $user->expire_time = date('Y-m-d H:i:s', strtotime("+" . self::$config['default_days'] . " days"));
         $user->reg_ip = $request->getClientIp();
         $user->referral_uid = $referral_uid;
-        $user->status = 1;
+        $user->status = 1;//直接激活
+        $user->u_phone_status = 1;//已绑定手机
+        $user->u_contract_0 = $username;//记录手机
         $user->save();
 
         // 注册次数+1

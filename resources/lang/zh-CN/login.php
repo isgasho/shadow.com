@@ -10,4 +10,5 @@ return [
     'forget_password' => '忘记密码',
     'login'           => '登 录',
     'register'        => '注 册',
+  'username_email'    => '手机或邮箱'
 ];

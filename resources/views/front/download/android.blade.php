@@ -85,10 +85,7 @@
                                 <p class="Text mb-5 mb-sm-6 text-xs-center fwm">随时随地保护您的在线隐私。</p>
                                 <div class="mb-5 mb-sm-6"><a
                                             class="Button Button--primary Button--large Button--block-xs d-sm-inline-block mb-5 mb-sm-4 mr-sm-4"
-                                            href="https://fs1-6.tlnk.io/serve?action=click&amp;publisher_id=358733&amp;site_id=126893&amp;destination_id=503972&amp;my_campaign=download_android&amp;my_site=nordwebsite.net&amp;sub1=&amp;sub2="
-                                            role="button" tabindex="0">安装</a><a
-                                            class="Button Button--primary Button--large Button--outline Button--block-xs d-sm-inline-block mb-sm-4"
-                                            href="https://fs1-6.tlnk.io/serve?action=click&amp;publisher_id=358733&amp;site_id=126893&amp;destination_id=503976&amp;my_campaign=download_sideloaded&amp;my_site=nordwebsite.net&amp;sub1=&amp;sub2="
+                                            href="/download_vpn/android/ShadowsocksR-v3.4.0.6.apk"
                                             role="button" tabindex="0">下载 .apk</a>
                                 </div>
 

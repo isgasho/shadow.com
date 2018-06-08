@@ -67,7 +67,33 @@
                                             </form>
                                         </div>
                                         <div class="tab-pane" id="tab_2">
-                                            <form action="{{url('user/profile')}}" method="post" enctype="multipart/form-data" class="form-bordered">
+                                            <form id="profile" action="{{url('user/profile')}}" method="post" enctype="multipart/form-data" class="form-bordered">
+                                                <div class="form-group">
+                                                    <label class="control-label">{{trans('home.username')}}</label>
+                                                    <input type="text" class="form-control" name="username" value="{{$info->username}}" id="username" required disabled="disabled"/>
+                                                    <input type="hidden" name="_token" value="{{csrf_token()}}" />
+                                                </div>
+                                                @if($info->u_phone_status == 1)
+                                                    1
+                                                @else
+                                                    <div class="row" style="margin-bottom: 15px">
+                                                        <div class="col-sm-8 col-md-8 col-xs-8">
+                                                            <label class="control-label">手机号</label>
+                                                            <input type="text" class="form-control" name="u_contract_1" value="{{$info->u_contract_1}}" id="u_contract_1" required />
+                                                            <input type="hidden" name="_token" value="{{csrf_token()}}" />
+                                                        </div>
+                                                        <div class="col-sm-4 col-md-4 col-xs-4">
+                                                            <div style="height: 23px"></div>
+                                                            <button id="send" type="button" class="btn red" onclick="Sms()">点击发送验证码</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label">验证码</label>
+                                                        <input type="text" class="form-control" name="smscode" value="" id="smscode" required />
+                                                        <input type="hidden" name="_token" value="{{csrf_token()}}" />
+                                                    </div>
+                                                @endif
+
                                                 <div class="form-group">
                                                     <label class="control-label">{{trans('home.wechat')}}</label>
                                                     <input type="text" class="form-control" name="wechat" value="{{$info->wechat}}" id="wechat" required />
@@ -141,6 +167,47 @@
 @endsection
 @section('script')
     <script type="text/javascript">
-        //
+        $('#exampleModal').on('show.bs.modal', function (event) {
+            var recipient = $("input[name='contract_to']").val();
+            if(recipient.length==13 || recipient.indexOf('@'))
+            var modal = $(this)
+            modal.find('.modal-title').text('验证码');
+            modal.find('.modal-body .phone').val(recipient)
+            Sms();
+        })
+        $('#profile').submit(function () {
+            var recipient = $("input[name='contract_to']").val();
+            // console.log(recipient.indexOf('@') == -1);
+            if(recipient.indexOf('@') == -1){
+                //手机验证码
+                $('#ToSms').click();
+                return false;
+            }else{
+                //邮箱
+                return true;
+            }
+
+        })
+
+        function Sms() {
+            var phone = $("input[name='u_contract_1']").val();
+            // console.log(phone)
+            $("#send").attr('disabled','disabled');
+
+            $.get('/sendSms',{phone:phone});
+
+            var time = 60;
+            var codeTimes=setInterval(function() {
+                if(time<=0){
+                    clearInterval(codeTimes);
+                    $("#send").html("点击获取验证码");
+                    $("#send").attr("disabled",false);
+                }else{
+                    time--;
+                    var val=time+'后重获';
+                    $("#send").html(val);
+                }
+            },1000);
+        }
     </script>
 @endsection

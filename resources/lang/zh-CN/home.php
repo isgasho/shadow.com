@@ -166,6 +166,8 @@ return [
     'profile'                         => '个人资料',
     'logout'                          => '退出',
     'promote'                         => '通过您的推广链接注册并激活的用户可获得 :traffic 流量奖励，同时您也可以获得 :traffic 流量奖励；当他们消费时，您可以获得他们每笔消费金额的 :referral_percent% 作为奖励。',
-    'go_index'                        => '返回官网'
-
+    'go_index'                        => '返回官网',
+    'profile_sidebar'                 => '个人资料',
+    'username'                        => '账号（不可更改）',
+    'contract_to'                     => '联系方式（可更改）',
     ];
