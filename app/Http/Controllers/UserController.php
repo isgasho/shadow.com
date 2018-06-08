@@ -220,7 +220,7 @@ class UserController extends Controller
                 //手机号
                 if($u_contract_0){
                   $codeData = DB::table('smscode')->select('c_code')->where('c_phone','=',$u_contract_0)->orderBy('c_id','DESC')->first();
-                  $mysqlCode = $codeData['c_code'];
+                  $mysqlCode = $codeData->c_code;
                   if($mysqlCode != $smscode){
                     $request->session()->flash('errorMsg', '手机验证码错误');
                     return Redirect::to('user/profile#tab_2');
@@ -231,6 +231,31 @@ class UserController extends Controller
                       return Redirect::to('user/profile#tab_2');
                     }
                   }
+                }
+
+                //邮箱
+                if($u_contract_1){
+                  // 生成激活账号的地址
+                  $token = md5(self::$config['website_name'] . $u_contract_1 . microtime());
+                  $verify = new Verify();
+                  $verify->user_id = $user->id;
+                  $verify->username = $u_contract_1;
+                  $verify->token = $token;
+                  $verify->status = 0;
+                  $verify->save();
+
+                  $activeUserUrl = self::$config['website_url'] . '/active/' . $token;
+                  $title = '邮箱绑定';
+                  $content = '请求地址：' . $activeUserUrl;
+
+                  try {
+                    Mail::to($u_contract_1)->send(new activeUser(self::$config['website_name'], $activeUserUrl));
+                    $this->sendEmailLog($user->id, $title, $content);
+                  } catch (\Exception $e) {
+                    $this->sendEmailLog($user->id, $title, $content, 0, $e->getMessage());
+                  }
+
+                  $request->session()->flash('regSuccessMsg', '保存成功：绑定邮件已发送，请查看邮箱');
                 }
 
                 $ret = User::query()->where('id', $user['id'])->update(['wechat' => $wechat, 'qq' => $qq]);
@@ -664,6 +689,63 @@ class UserController extends Controller
 
         return Response::view('user/active');
     }
+
+  // 激活账号__用户profile绑定邮箱
+    public function active_profile(Request $request, $token)
+  {
+    if (empty($token)) {
+      return Redirect::to('login');
+    }
+
+    $verify = Verify::query()->where('token', $token)->with('user')->first();
+    if (empty($verify)) {
+      return Redirect::to('login');
+    } else if (empty($verify->user)) {
+      $request->session()->flash('errorMsg', '该链接已失效');
+
+      return Response::view('user/active');
+    } else if ($verify->status == 1) {
+      $request->session()->flash('errorMsg', '该链接已失效');
+
+      return Response::view('user/active');
+    } else if ($verify->user->status != 0) {
+      $request->session()->flash('errorMsg', '该账号无需激活.');
+
+      return Response::view('user/active');
+    } else if (time() - strtotime($verify->created_at) >= 1800) {
+      $request->session()->flash('errorMsg', '该链接已过期');
+
+      // 置为已失效
+      $verify->status = 2;
+      $verify->save();
+
+      return Response::view('user/active');
+    }
+
+    // 更新账号状态
+    $ret = User::query()->where('id', $verify->user_id)->update(['u_email_status' => 1]);
+    if (!$ret) {
+      $request->session()->flash('errorMsg', '邮箱绑定失败');
+
+      return Redirect::back();
+    }
+
+    // 置为已使用
+    $verify->status = 1;
+    $verify->save();
+
+    // 账号激活后给邀请人送流量
+    if ($verify->user->referral_uid) {
+      $transfer_enable = self::$config['referral_traffic'] * 1048576;
+
+      User::query()->where('id', $verify->user->referral_uid)->increment('transfer_enable', $transfer_enable);
+      User::query()->where('id', $verify->user->referral_uid)->update(['enable' => 1]);
+    }
+
+    $request->session()->flash('successMsg', '邮箱绑定成功');
+
+    return Response::view('user/active');
+  }
 
     // 重设密码页
     public function resetPassword(Request $request)

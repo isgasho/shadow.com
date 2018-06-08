@@ -74,7 +74,11 @@
                                                     <input type="hidden" name="_token" value="{{csrf_token()}}" />
                                                 </div>
                                                 @if($info->u_phone_status == 1)
-                                                    1
+                                                    <div class="form-group">
+                                                        <label class="control-label">邮箱</label>
+                                                        <input type="text" class="form-control" name="u_contract_1" value="{{$info->u_contract_1}}" id="u_contract_1" required disabled="disabled"/>
+                                                        <input type="hidden" name="_token" value="{{csrf_token()}}" />
+                                                    </div>
                                                 @else
                                                     <div class="row" style="margin-bottom: 15px">
                                                         <div class="col-sm-8 col-md-8 col-xs-8">
