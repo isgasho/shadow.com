@@ -190,7 +190,7 @@
         })
 
         function Sms() {
-            var phone = $("input[name='u_contract_1']").val();
+            var phone = $("input[name='u_contract_0']").val();
             // console.log(phone)
             $("#send").attr('disabled','disabled');
 

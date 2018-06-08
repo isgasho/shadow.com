@@ -440,6 +440,7 @@ class RegisterController extends Controller
   public function sendSms(Request $request){
       $data['c_phone'] = $request->input('phone');
       if(strlen($data['c_phone'])!=11){
+        echo strlen($data['c_phone']);
         return 405;//手机号码错误
       }else{
         //同一个号码一小时5次限制
