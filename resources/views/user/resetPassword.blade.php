@@ -32,31 +32,31 @@
 <body class=" login">
 <!-- BEGIN LOGO -->
 <div class="logo">
-    <a href="javascript:;"> <img src="/assets/images/home_logo.png" alt="" /> </a>
+    <a href="javascript:;"> <img src="/images/logo_white.png" alt="" /> </a>
 </div>
 <!-- END LOGO -->
 <!-- BEGIN LOGIN -->
 <div class="content">
-    <nav style="padding-bottom: 20px;text-align: center;">
-        @if(app()->getLocale() == 'zh-CN')
-            <a href="{{url('lang', ['locale' => 'en'])}}">English</a>
-            <a href="{{url('lang', ['locale' => 'ja'])}}">日本語</a>
-            <a href="{{url('lang', ['locale' => 'ko'])}}">한국어</a>
-        @elseif(app()->getLocale() == 'en')
-            <a href="{{url('lang', ['locale' => 'zh-CN'])}}">中文</a>
-            <a href="{{url('lang', ['locale' => 'ja'])}}">日本語</a>
-            <a href="{{url('lang', ['locale' => 'ko'])}}">한국어</a>
-        @elseif(app()->getLocale() == 'ko')
-            <a href="{{url('lang', ['locale' => 'zh-CN'])}}">中文</a>
-            <a href="{{url('lang', ['locale' => 'en'])}}">English</a>
-            <a href="{{url('lang', ['locale' => 'ja'])}}">日本語</a>
-        @elseif(app()->getLocale() == 'ja')
-            <a href="{{url('lang', ['locale' => 'zh-CN'])}}">中文</a>
-            <a href="{{url('lang', ['locale' => 'en'])}}">English</a>
-            <a href="{{url('lang', ['locale' => 'ko'])}}">한국어</a>
-        @else
-        @endif
-    </nav>
+    {{--<nav style="padding-bottom: 20px;text-align: center;">--}}
+        {{--@if(app()->getLocale() == 'zh-CN')--}}
+            {{--<a href="{{url('lang', ['locale' => 'en'])}}">English</a>--}}
+            {{--<a href="{{url('lang', ['locale' => 'ja'])}}">日本語</a>--}}
+            {{--<a href="{{url('lang', ['locale' => 'ko'])}}">한국어</a>--}}
+        {{--@elseif(app()->getLocale() == 'en')--}}
+            {{--<a href="{{url('lang', ['locale' => 'zh-CN'])}}">中文</a>--}}
+            {{--<a href="{{url('lang', ['locale' => 'ja'])}}">日本語</a>--}}
+            {{--<a href="{{url('lang', ['locale' => 'ko'])}}">한국어</a>--}}
+        {{--@elseif(app()->getLocale() == 'ko')--}}
+            {{--<a href="{{url('lang', ['locale' => 'zh-CN'])}}">中文</a>--}}
+            {{--<a href="{{url('lang', ['locale' => 'en'])}}">English</a>--}}
+            {{--<a href="{{url('lang', ['locale' => 'ja'])}}">日本語</a>--}}
+        {{--@elseif(app()->getLocale() == 'ja')--}}
+            {{--<a href="{{url('lang', ['locale' => 'zh-CN'])}}">中文</a>--}}
+            {{--<a href="{{url('lang', ['locale' => 'en'])}}">English</a>--}}
+            {{--<a href="{{url('lang', ['locale' => 'ko'])}}">한국어</a>--}}
+        {{--@else--}}
+        {{--@endif--}}
+    {{--</nav>--}}
     @if (Session::get('errorMsg'))
         <div class="alert alert-danger">
             <button class="close" data-close="alert"></button>
@@ -73,10 +73,10 @@
     <form class="forget-form" action="{{url('resetPassword')}}" method="post" style="display: block;">
         @if($is_reset_password)
             <div class="form-title">
-                <span class="form-title">{{trans('home.reset_password_title')}}</span>
+                <span class="form-title">{{trans('home.reset_password_title')}}</span><br/>
             </div>
             <div class="form-group">
-                <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="" name="username" value="{{Request::old('username')}}" required autofocus />
+                <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="请输入您的账号" name="username" value="{{Request::old('username')}}" required autofocus />
                 <input type="hidden" name="_token" value="{{csrf_token()}}" />
             </div>
         @else

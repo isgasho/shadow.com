@@ -32,31 +32,31 @@
 <body class="login">
 <!-- BEGIN LOGO -->
 <div class="logo">
-    <a href="javascript:;"> <img src="/assets/images/home_logo.png" alt="" /> </a>
+    <a href="javascript:;"> <img src="/images/logo_white.png" alt="" /> </a>
 </div>
 <!-- END LOGO -->
 <!-- BEGIN LOGIN -->
 <div class="content">
-    <nav style="padding-bottom: 20px;text-align: center;">
-        @if(app()->getLocale() == 'zh-CN')
-            <a href="{{url('lang', ['locale' => 'en'])}}">English</a>
-            <a href="{{url('lang', ['locale' => 'ja'])}}">日本語</a>
-            <a href="{{url('lang', ['locale' => 'ko'])}}">한국어</a>
-        @elseif(app()->getLocale() == 'en')
-            <a href="{{url('lang', ['locale' => 'zh-CN'])}}">中文</a>
-            <a href="{{url('lang', ['locale' => 'ja'])}}">日本語</a>
-            <a href="{{url('lang', ['locale' => 'ko'])}}">한국어</a>
-        @elseif(app()->getLocale() == 'ko')
-            <a href="{{url('lang', ['locale' => 'zh-CN'])}}">中文</a>
-            <a href="{{url('lang', ['locale' => 'en'])}}">English</a>
-            <a href="{{url('lang', ['locale' => 'ja'])}}">日本語</a>
-        @elseif(app()->getLocale() == 'ja')
-            <a href="{{url('lang', ['locale' => 'zh-CN'])}}">中文</a>
-            <a href="{{url('lang', ['locale' => 'en'])}}">English</a>
-            <a href="{{url('lang', ['locale' => 'ko'])}}">한국어</a>
-        @else
-        @endif
-    </nav>
+    {{--<nav style="padding-bottom: 20px;text-align: center;">--}}
+        {{--@if(app()->getLocale() == 'zh-CN')--}}
+            {{--<a href="{{url('lang', ['locale' => 'en'])}}">English</a>--}}
+            {{--<a href="{{url('lang', ['locale' => 'ja'])}}">日本語</a>--}}
+            {{--<a href="{{url('lang', ['locale' => 'ko'])}}">한국어</a>--}}
+        {{--@elseif(app()->getLocale() == 'en')--}}
+            {{--<a href="{{url('lang', ['locale' => 'zh-CN'])}}">中文</a>--}}
+            {{--<a href="{{url('lang', ['locale' => 'ja'])}}">日本語</a>--}}
+            {{--<a href="{{url('lang', ['locale' => 'ko'])}}">한국어</a>--}}
+        {{--@elseif(app()->getLocale() == 'ko')--}}
+            {{--<a href="{{url('lang', ['locale' => 'zh-CN'])}}">中文</a>--}}
+            {{--<a href="{{url('lang', ['locale' => 'en'])}}">English</a>--}}
+            {{--<a href="{{url('lang', ['locale' => 'ja'])}}">日本語</a>--}}
+        {{--@elseif(app()->getLocale() == 'ja')--}}
+            {{--<a href="{{url('lang', ['locale' => 'zh-CN'])}}">中文</a>--}}
+            {{--<a href="{{url('lang', ['locale' => 'en'])}}">English</a>--}}
+            {{--<a href="{{url('lang', ['locale' => 'ko'])}}">한국어</a>--}}
+        {{--@else--}}
+        {{--@endif--}}
+    {{--</nav>--}}
     @if(Session::get('errorMsg'))
         <div class="alert alert-danger">
             <span> {{Session::get('errorMsg')}} </span>

@@ -187,7 +187,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-12"><p class="Text micro"><span>所有金额的单位为美元.</span></p></div>
                     </div>
                 </div>
             </div>

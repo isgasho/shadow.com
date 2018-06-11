@@ -141,4 +141,11 @@ class LoginController extends Controller
         return Redirect::to('login')->cookie('remember', "", 36000);
     }
 
+  // 前端页面退出
+  public function logouttofront(Request $request)
+  {
+    $request->session()->flush();
+    return Redirect::to('/')->cookie('remember', "", 36000);
+  }
+
 }

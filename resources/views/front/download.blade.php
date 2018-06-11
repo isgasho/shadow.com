@@ -9,6 +9,18 @@
                 <ul class="List ScrollableTabs__items">
                     <li class="ListItem ScrollableTabs__item px-md-5 d-inline-block"><a
                                 class="Link ScrollableTabs__link p-5 Link--dark"
+                                href="/front/download/"><span class="SVG-wrapper"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        class="SVG SVG--inline text-center scale-24 c-bw-14 mb-3"
+                                        preserveAspectRatio="xMidYMid meet"><path
+                                            d="M22 1v9.842L11 11V2.533L22 1zM2 3.946L9 3v7.903L2 11V3.946zm9 17.52V13l11 .158V23l-11-1.533zm-9-1.412V13l7 .098V21l-7-.946z"
+                                            fill="#151922" fill-rule="evenodd"></path></svg></span>
+                            <div class="ScrollableTabs__title-wrapper">
+                                <div class="ScrollableTabs__title micro">Windows</div>
+                            </div>
+                        </a></li>
+                    <li class="ListItem ScrollableTabs__item px-md-5 d-inline-block"><a
+                                class="Link ScrollableTabs__link p-5 Link--dark"
                                 href="/front/download/android/"><span class="SVG-wrapper"><svg
                                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                         class="SVG SVG--inline text-center scale-24 c-bw-14 mb-3"
@@ -22,14 +34,14 @@
                         </a></li>
                     <li class="ListItem ScrollableTabs__item px-md-5 d-inline-block"><a
                                 class="Link ScrollableTabs__link p-5 Link--dark"
-                                href="/front/download/"><span class="SVG-wrapper"><svg
+                                href="/front/download/ios/"><span class="SVG-wrapper"><svg
                                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                         class="SVG SVG--inline text-center scale-24 c-bw-14 mb-3"
                                         preserveAspectRatio="xMidYMid meet"><path
-                                            d="M22 1v9.842L11 11V2.533L22 1zM2 3.946L9 3v7.903L2 11V3.946zm9 17.52V13l11 .158V23l-11-1.533zm-9-1.412V13l7 .098V21l-7-.946z"
-                                            fill="#151922" fill-rule="evenodd"></path></svg></span>
+                                            d="M20.652 18.12c-.52 1.149-.767 1.662-1.436 2.677-.931 1.418-2.244 3.185-3.871 3.2-1.446.013-1.818-.94-3.78-.93-1.962.01-2.373.946-3.82.933-1.627-.015-2.87-1.61-3.803-3.029-2.604-3.966-2.877-8.619-1.27-11.092 1.14-1.76 2.942-2.787 4.637-2.787 1.725 0 2.808.945 4.235.945 1.383 0 2.226-.947 4.22-.947 1.508 0 3.106.821 4.243 2.238-3.728 2.045-3.122 7.368.645 8.792zM15.069 4.048C14.19 5.173 12.682 6.045 11.223 6c-.266-1.45.418-2.943 1.246-3.95C13.383.942 14.946.091 16.282 0c.227 1.515-.394 2.998-1.213 4.048z"
+                                            fill="#151922"></path></svg></span>
                             <div class="ScrollableTabs__title-wrapper">
-                                <div class="ScrollableTabs__title micro">Windows</div>
+                                <div class="ScrollableTabs__title micro">iOS · iPhone · iPad</div>
                             </div>
                         </a></li>
                     <li class="ListItem ScrollableTabs__item px-md-5 d-inline-block"><a
@@ -42,18 +54,6 @@
                                             fill="#151922" fill-rule="evenodd"></path></svg></span>
                             <div class="ScrollableTabs__title-wrapper">
                                 <div class="ScrollableTabs__title micro">macOS</div>
-                            </div>
-                        </a></li>
-                    <li class="ListItem ScrollableTabs__item px-md-5 d-inline-block"><a
-                                class="Link ScrollableTabs__link p-5 Link--dark"
-                                href="/front/download/ios/"><span class="SVG-wrapper"><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        class="SVG SVG--inline text-center scale-24 c-bw-14 mb-3"
-                                        preserveAspectRatio="xMidYMid meet"><path
-                                            d="M20.652 18.12c-.52 1.149-.767 1.662-1.436 2.677-.931 1.418-2.244 3.185-3.871 3.2-1.446.013-1.818-.94-3.78-.93-1.962.01-2.373.946-3.82.933-1.627-.015-2.87-1.61-3.803-3.029-2.604-3.966-2.877-8.619-1.27-11.092 1.14-1.76 2.942-2.787 4.637-2.787 1.725 0 2.808.945 4.235.945 1.383 0 2.226-.947 4.22-.947 1.508 0 3.106.821 4.243 2.238-3.728 2.045-3.122 7.368.645 8.792zM15.069 4.048C14.19 5.173 12.682 6.045 11.223 6c-.266-1.45.418-2.943 1.246-3.95C13.383.942 14.946.091 16.282 0c.227 1.515-.394 2.998-1.213 4.048z"
-                                            fill="#151922"></path></svg></span>
-                            <div class="ScrollableTabs__title-wrapper">
-                                <div class="ScrollableTabs__title micro">iOS · iPhone · iPad</div>
                             </div>
                         </a></li>
                 </ul>

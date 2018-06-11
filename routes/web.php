@@ -6,7 +6,8 @@ Route::group(['middleware' => ['forbidden']], function () {
     Route::get('lang/{locale}', 'UserController@switchLang'); // 语言切换
     Route::any('login', 'LoginController@index'); // 登录
     Route::get('logout', 'LoginController@logout'); // 退出
-    Route::any('register', 'RegisterController@index'); // 注册
+  Route::get('logouttofront', 'LoginController@logouttofront'); // 退出
+  Route::any('register', 'RegisterController@index'); // 注册
   Route::any('register2', 'RegisterController@indexByPhone'); // 注册--手机
   Route::any('resetPassword', 'UserController@resetPassword'); // 重设密码
     Route::any('reset/{token}', 'UserController@reset'); // 重设密码

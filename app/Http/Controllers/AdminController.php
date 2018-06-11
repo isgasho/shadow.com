@@ -47,13 +47,9 @@ class AdminController extends Controller
 
     public function dd(Request $request)
     {
-      $f['label_id'] = 6;
-      $data = DB::table('user_label')->select('user_id')->where($f)->get();
-      $dataFind = [];
-      foreach($data as $u){
-        $dataFind[] = $u->user_id;
-      }
-      return $dataFind;
+      var_dump(date('Y-m-d', strtotime("+" . self::$config['expire_days'] . " days")));
+      $data = User::query()->where('expire_time', '<=', date('Y-m-d', strtotime("+" . self::$config['expire_days'] . " days")))->where('enable', 1)->count();
+      return $data;
     }
 
     public function index(Request $request)
@@ -77,6 +73,7 @@ class AdminController extends Controller
       $view['totalWaitRefAmount'] = ReferralLog::query()->whereIn('status', [0, 1])->sum('ref_amount') / 100;
       $view['totalRefAmount'] = ReferralApply::query()->where('status', 2)->sum('amount') / 100;
       $view['expireWarningUserCount'] = User::query()->where('expire_time', '<=', date('Y-m-d', strtotime("+" . self::$config['expire_days'] . " days")))->where('enable', 1)->count();
+      $view['expireWarningUserCount_n'] = User::query()->where('expire_time', '<=', date('Y-m-d', strtotime("+" . self::$config['expire_days'] . " days")))->where('enable', 0)->count();
 
       return Response::view('admin/index', $view);
     }

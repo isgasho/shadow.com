@@ -829,6 +829,10 @@ class UserController extends Controller
                 $request->session()->flash('errorMsg', '密码不能为空');
 
                 return Redirect::back();
+            } else if (strlen($password)<8) {
+              $request->session()->flash('errorMsg', '密码必须大于8位');
+
+              return Redirect::back();
             } else if (md5($password) != md5($repassword)) {
                 $request->session()->flash('errorMsg', '两次输入密码不一致，请重新输入');
 

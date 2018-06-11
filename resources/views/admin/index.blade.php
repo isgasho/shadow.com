@@ -67,13 +67,13 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="dashboard-stat2 bordered" onclick="skip('wSifGFeO5mQoCWB4/userList?expireWarning=1');">
+                <div class="dashboard-stat2 bordered" onclick="skip('wSifGFeO5mQoCWB4/userList?expireWarning=1&enable=1');">
                     <div class="display">
                         <div class="number">
                             <h3 class="font-red">
                                 <span data-counter="counterup" data-value="{{$expireWarningUserCount}}">0</span>
                             </h3>
-                            <small>临近到期</small>
+                            <small>已激活临近到期</small>
                         </div>
                         <div class="icon">
                             <i class="icon-user-unfollow"></i>
@@ -128,6 +128,21 @@
             </div>
         </div>
         <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="dashboard-stat2 bordered" onclick="skip('wSifGFeO5mQoCWB4/userList?expireWarning=1&enable=0');">
+                    <div class="display">
+                        <div class="number">
+                            <h3 class="font-blue-sharp">
+                                <span data-counter="counterup" data-value="{{$expireWarningUserCount_n}}">0</span>
+                            </h3>
+                            <small>未激活临近到期</small>
+                        </div>
+                        <div class="icon">
+                            <i class="icon-user-unfollow"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="dashboard-stat2 bordered" onclick="skip('wSifGFeO5mQoCWB4/nodeList');">
                     <div class="display">

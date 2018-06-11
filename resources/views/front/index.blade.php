@@ -160,70 +160,62 @@
                     <div class="row row__flex">
                         <div class="col-xs-12 col-md-3 mb-6">
                             <div class="ArticleCard ArticleCard--vertical">
-                                <a class="Link Link--dark" href="https://nordwebsite.net/zh/blog/new-servers-added/">
-                                    <div class="Paper bg-bw-1 d-flex clearfix sha-1 sha-3-hover">
-                                        <div class="col-xs-12 col-sm-5 ArticleCard__image-wrapper px-0 col-md-12">
-                                            <div class="ArticleCard__image" style="background-image:url(/images/index/picture1.png)"></div>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-7 col-md-12 ArticleCard__content-wrapper px-0 d-flex">
-                                            <div class="d-flex flex-column w-100 p-6">
-                                                <p class="Text ArticleCard__title fwm mb-3 title_ohh">影视爱好者</p>
-                                                <p class="Text nano mb-3 c-bw-6 content_ohh" >适合喜欢追美剧，关心国内外时事娱乐动态的用户，能在线流畅观看高清Youtube，Netflix和Twitch等视频影视网站</p>
-                                            </div>
+                                <div class="Paper bg-bw-1 d-flex clearfix sha-1 ">
+                                    <div class="col-xs-12 col-sm-5 ArticleCard__image-wrapper px-0 col-md-12">
+                                        <div class="ArticleCard__image" style="background-image:url(/images/index/picture1.png)"></div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-7 col-md-12 ArticleCard__content-wrapper px-0 d-flex">
+                                        <div class="d-flex flex-column w-100 p-6">
+                                            <p class="Text ArticleCard__title fwm mb-3 title_ohh">影视爱好者</p>
+                                            <p class="Text nano mb-3 c-bw-6 content_ohh" >适合喜欢追美剧，关心国内外时事娱乐动态的用户，能在线流畅观看高清Youtube，Netflix和Twitch等视频影视网站</p>
                                         </div>
                                     </div>
-                                </a>
+                                </div>
                             </div>
                         </div>
                         <div class="col-xs-12 col-md-3 mb-6">
                             <div class="ArticleCard ArticleCard--vertical">
-                                <a class="Link Link--dark" href="https://nordwebsite.net/zh/blog/securus-government-location-tracking-hack/">
-                                    <div class="Paper bg-bw-1 d-flex clearfix sha-1 sha-3-hover">
-                                        <div class="col-xs-12 col-sm-5 ArticleCard__image-wrapper px-0 col-md-12">
-                                            <div class="ArticleCard__image" style="background-image:url(/images/index/picture2.png)"></div>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-7 col-md-12 ArticleCard__content-wrapper px-0 d-flex">
-                                            <div class="d-flex flex-column w-100 p-6">
-                                                <p class="Text ArticleCard__title fwm mb-3 title_ohh">社交达人</p>
-                                                <p class="Text nano mb-3 c-bw-6 content_ohh">适合Facebook，Twitter，Instagram等热爱社交的用户，让社交无地域限制，随时随地结交世界各地的朋友</p>
-                                            </div>
+                                <div class="Paper bg-bw-1 d-flex clearfix sha-1 ">
+                                    <div class="col-xs-12 col-sm-5 ArticleCard__image-wrapper px-0 col-md-12">
+                                        <div class="ArticleCard__image" style="background-image:url(/images/index/picture2.png)"></div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-7 col-md-12 ArticleCard__content-wrapper px-0 d-flex">
+                                        <div class="d-flex flex-column w-100 p-6">
+                                            <p class="Text ArticleCard__title fwm mb-3 title_ohh">社交达人</p>
+                                            <p class="Text nano mb-3 c-bw-6 content_ohh">适合Facebook，Twitter，Instagram等热爱社交的用户，让社交无地域限制，随时随地结交世界各地的朋友</p>
                                         </div>
                                     </div>
-                                </a>
+                                </div>
                             </div>
                         </div>
                         <div class="col-xs-12 col-md-3 mb-6">
                             <div class="ArticleCard ArticleCard--vertical">
-                                <a class="Link Link--dark" href="https://nordwebsite.net/zh/blog/teenage-hacker-high-school-email/">
-                                    <div class="Paper bg-bw-1 d-flex clearfix sha-1 sha-3-hover">
-                                        <div class="col-xs-12 col-sm-5 ArticleCard__image-wrapper px-0 col-md-12">
-                                            <div class="ArticleCard__image" style="background-image:url(/images/index/picture3.png)"></div>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-7 col-md-12 ArticleCard__content-wrapper px-0 d-flex">
-                                            <div class="d-flex flex-column w-100 p-6">
-                                                <p class="Text ArticleCard__title fwm mb-3 title_ohh">区块链用户</p>
-                                                <p class="Text nano mb-3 c-bw-6 content_ohh">适合炒币，币圈电报群，获取币圈最新资讯的区块链用户，高速无延迟的服务让区块链用户投资获利更胜一筹</p>
-                                            </div>
+                                <div class="Paper bg-bw-1 d-flex clearfix sha-1 ">
+                                    <div class="col-xs-12 col-sm-5 ArticleCard__image-wrapper px-0 col-md-12">
+                                        <div class="ArticleCard__image" style="background-image:url(/images/index/picture3.png)"></div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-7 col-md-12 ArticleCard__content-wrapper px-0 d-flex">
+                                        <div class="d-flex flex-column w-100 p-6">
+                                            <p class="Text ArticleCard__title fwm mb-3 title_ohh">区块链用户</p>
+                                            <p class="Text nano mb-3 c-bw-6 content_ohh">适合炒币，币圈电报群，获取币圈最新资讯的区块链用户，高速无延迟的服务让区块链用户投资获利更胜一筹</p>
                                         </div>
                                     </div>
-                                </a>
+                                </div>
                             </div>
                         </div>
                         <div class="col-xs-12 col-md-3 mb-6">
                             <div class="ArticleCard ArticleCard--vertical">
-                                <a class="Link Link--dark" href="https://nordwebsite.net/zh/blog/teenage-hacker-high-school-email/">
-                                    <div class="Paper bg-bw-1 d-flex clearfix sha-1 sha-3-hover">
-                                        <div class="col-xs-12 col-sm-5 ArticleCard__image-wrapper px-0 col-md-12">
-                                            <div class="ArticleCard__image" style="background-image:url(/images/index/picture4.png)"></div>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-7 col-md-12 ArticleCard__content-wrapper px-0 d-flex">
-                                            <div class="d-flex flex-column w-100 p-6">
-                                                <p class="Text ArticleCard__title fwm mb-3 title_ohh">各行各业用户</p>
-                                                <p class="Text nano mb-3 c-bw-6 content_ohh">无论你是海淘客，设计师，还是留学党。能让用户越过限制，与其它国家的任何企业或网站自由的沟通合作</p>
-                                            </div>
+                                <div class="Paper bg-bw-1 d-flex clearfix sha-1">
+                                    <div class="col-xs-12 col-sm-5 ArticleCard__image-wrapper px-0 col-md-12">
+                                        <div class="ArticleCard__image" style="background-image:url(/images/index/picture4.png)"></div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-7 col-md-12 ArticleCard__content-wrapper px-0 d-flex">
+                                        <div class="d-flex flex-column w-100 p-6">
+                                            <p class="Text ArticleCard__title fwm mb-3 title_ohh">各行各业用户</p>
+                                            <p class="Text nano mb-3 c-bw-6 content_ohh">无论你是海淘客，设计师，还是留学党。能让用户越过限制，与其它国家的任何企业或网站自由的沟通合作</p>
                                         </div>
                                     </div>
-                                </a>
+                                </div>
                             </div>
                         </div>
                     </div>

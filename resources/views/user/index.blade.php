@@ -179,7 +179,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="alert alert-info" id="msg">
-                            <textarea class="form-control" rows="15" readonly="readonly">
+                            <textarea class="form-control" rows="15" id="SSRURLALL">
                                 @foreach ($nodeList as $node)
                                     {{$node->ssr_scheme}}{{$node->ss_scheme ? "\n\n".$node->ss_scheme : ''}}
                                 @endforeach
@@ -187,8 +187,9 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" data-dismiss="modal" class="btn dark btn-outline">关闭</button>
-                        <button type="button" class="btn red btn-outline" onclick="return exchange();">复制</button>
+                        <a href="javascript:;" class="btn red mt-clipboard" data-clipboard-action="copy" data-clipboard-target="#SSRURLALL">
+                            点击复制
+                        </a>
                     </div>
                 </div>
             </div>
@@ -216,7 +217,12 @@
                             <h4 class="modal-title">Scheme Links</h4>
                         </div>
                         <div class="modal-body">
-                            <textarea class="form-control" rows="10" readonly="readonly">{{$node->ssr_scheme}}{{$node->ss_scheme ? "\n\n".$node->ss_scheme : ''}}</textarea>
+                            <textarea class="form-control" rows="10" id="SSRURL_{{$node->id}}">{{$node->ssr_scheme}}{{$node->ss_scheme ? "\n\n".$node->ss_scheme : ''}}</textarea>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="javascript:;" class="btn red mt-clipboard" data-clipboard-action="copy" data-clipboard-target="#SSRURL_{{$node->id}}">
+                                点击复制
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -256,7 +262,8 @@
     <script src="/assets/global/plugins/jquery-qrcode/jquery.qrcode.min.js" type="text/javascript"></script>
     <script src="/assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
     <script src="/js/layer/layer.js" type="text/javascript"></script>
-
+    <script src="/assets/global/plugins/clipboardjs/clipboard.min.js" type="text/javascript"></script>
+    <script src="/assets/pages/scripts/components-clipboard.min.js" type="text/javascript"></script>
     <script type="text/javascript">
         // 充值
         function charge() {
@@ -312,6 +319,7 @@
 
             return false;
         }
+
     </script>
 
     <script type="text/javascript">
