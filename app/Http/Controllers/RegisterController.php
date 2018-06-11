@@ -286,6 +286,10 @@ class RegisterController extends Controller
           $request->session()->flash('errorMsg', '请重新输入密码');
 
           return Redirect::back()->withInput();
+        } else if (strlen($password)<8) {
+          $request->session()->flash('errorMsg', '密码必须大于8位');
+
+          return Redirect::back()->withInput();
         } else if (md5($password) != md5($repassword)) {
           $request->session()->flash('errorMsg', '两次输入密码不一致，请重新输入');
 
