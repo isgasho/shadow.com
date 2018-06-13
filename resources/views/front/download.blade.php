@@ -1,6 +1,10 @@
 @extends('front.layouts2')
 
-@section('title', '穿云梯--VPN应用')
+@section('css')
+    <link href="https://vjs.zencdn.net/6.9.0/video-js.css" rel="stylesheet">
+
+
+@endsection
 @section('content')
     <div class="DownloadsHub">
         <hr class="my-0">
@@ -109,68 +113,28 @@
             </div>
         </section>
         <hr class="my-0">
-        {{--<section class="bg-bw-2">--}}
-            {{--<div class="SectionWrapper py-11 py-sm-12 py-md-14">--}}
-                {{--<div class="container">--}}
-                    {{--<div class="row">--}}
-                        {{--<div class="col-xs-12 col-lg-offset-1 col-lg-10 text-center">--}}
-                            {{--<h3 class="Title mb-6">NordVPN 让安全变得简单</h3>--}}
-                            {{--<p class="Text mb-7">无烦扰地获取全功能 VPN 服务的所有优点。</p>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="row">--}}
-                        {{--<div class="col-xs-12 col-sm-4">--}}
-                            {{--<div class="FeatureItem text-center px-md-6 py-7 py-sm-8"><img--}}
-                                        {{--src="https://s1.nordwebsite.net/nordvpn/3.85.0/images/global/illustrations/benefits/unrestricted-internet.svg"--}}
-                                        {{--class="mb-6" alt="unrestricted-internet">--}}
-                                {{--<h6 class="Title base mb-3 fwm">无拘无束的互联网</h6>--}}
-                                {{--<p class="Text small mb-0">您可使用 NordVPN 即刻访问在您的国家或地区可能受限的各种社交媒体、P2P 服务和娱乐内容。</p>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="col-xs-12 col-sm-4">--}}
-                            {{--<div class="FeatureItem text-center px-md-6 py-7 py-sm-8"><img--}}
-                                        {{--src="https://s1.nordwebsite.net/nordvpn/3.85.0/images/global/illustrations/benefits/safe-wifi.svg"--}}
-                                        {{--class="mb-6" alt="safe-wifi">--}}
-                                {{--<h6 class="Title base mb-3 fwm">安全 Wi-Fi</h6>--}}
-                                {{--<p class="Text small mb-0">使用公共 Wi-Fi--}}
-                                    {{--查询您的银行账户余额、在线购物和使用社交媒体。在世界任何地点，只需点击一下，您就可实现连接，完全无需担心。</p>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="col-xs-12 col-sm-4">--}}
-                            {{--<div class="FeatureItem text-center px-md-6 py-7 py-sm-8"><img--}}
-                                        {{--src="https://s1.nordwebsite.net/nordvpn/3.85.0/images/global/illustrations/benefits/complete-privacy.svg"--}}
-                                        {{--class="mb-6" alt="complete-privacy">--}}
-                                {{--<h6 class="Title base mb-3 fwm">完全私密</h6>--}}
-                                {{--<p class="Text small mb-0">使用 NordVPN，您将拥有真正私密的在线活动，而这是您理所应得的。您的所有通信都会受到军事级加密的全面保护。</p>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="mt-7 text-center"><a class="Button Button--primary Button--block-xs mb-5"--}}
-                                                     {{--href="/zh/order/" role="button" tabindex="0">立即购买</a></div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</section>--}}
-        {{--<section class="BannerWrapper BannerWrapper--no-image">--}}
-            {{--<div class="Background Background--hidden-sm-up"--}}
-                 {{--style="background-image:url(https://s1.nordwebsite.net/nordvpn/3.85.0/images/download-hub/parent/banner-pills-woman-mobile-light-left-01-xs.jpg);background-color:#f8f8f8;background-repeat:no-repeat;background-position:center bottom;background-size:100%;">--}}
-                {{--<div class="container">--}}
-                    {{--<div class="Background Background--hidden-xs"--}}
-                         {{--style="background-image:url(https://s1.nordwebsite.net/nordvpn/3.85.0/images/download-hub/parent/banner-pills-woman-mobile-light-left-01.jpg);background-color:#f8f8f8;background-repeat:no-repeat;background-position:center;background-size:100%;">--}}
-                        {{--<div class="Banner Banner--light">--}}
-                            {{--<div class="d-sm-flex row">--}}
-                                {{--<div class="pt-11 py-sm-11 py-md-14 my-auto col-sm-6 col-sm-push-6 col-xs-12">--}}
-                                    {{--<h2 class="Title h2 mb-5 mb-sm-6 text-xs-center">还不是会员？</h2>--}}
-                                    {{--<p class="Text mb-5 mb-sm-6 text-xs-center fwm">立即开始保障您的隐私和安全！</p>--}}
-                                    {{--<div class="mb-5 mb-sm-6"><a--}}
-                                                {{--class="Button Button--primary Button--block-xs d-sm-inline-block mb-5 mb-sm-0 mr-sm-4"--}}
-                                                {{--href="/zh/order/" role="button" tabindex="0">立即购买</a></div>--}}
-
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</section>--}}
     </div>
+    <div class="video_main dw">
+        <ul>
+            <li class="video_main_video left">
+                <video id="videoPlay1" width="100%" height="100%" src="//vjs.zencdn.net/v/oceans.mp4" poster="//vjs.zencdn.net/v/oceans.png" loop="loop" x-webkit-airplay="true" webkit-playsinline="true">
+                    您的浏览器暂不支持播放该视频，请升级至最新版浏览器。
+                </video>
+            </li>
+        </ul>
+    </div>
+    <script>
+        var video1=document.getElementById("videoPlay1");
+        video1.onclick=function(){
+            if(video1.paused){
+                video1.play();
+            }else{
+                video1.pause();
+            }
+        }
+    </script>
+@endsection
+
+@section('script')
+
 @endsection

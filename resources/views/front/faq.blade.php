@@ -1,28 +1,21 @@
 @extends('front.layouts2')
 
-@section('title', '穿云梯--帮助中心')
 @section('content')
+    <style>
+        .wp-AccordionCardItem__wrapper{
+            background-color: #FFFFFF;
+        }
+    </style>
     <div class="BaseTemplate FAQ bg-bw-2">
         <section>
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-                        <h1 class="Title h3 pt-9 pt-md-11 pb-8 pb-md-9">Frequently asked questions</h1>
-                        <div class="pl-5 mb-9 md-md-11" style="border-left:1px solid #d0d1d3">
-                            <p class="Text micro d-block mb-4 c-bw-6">Jump to section</p><a
-                                    class="Link small mb-4 d-block Link--alt" href="#section-general"
-                                    data-scroller="true">General</a><a class="Link small mb-4 d-block Link--alt"
-                                                                       href="#section-billing-and-sales"
-                                                                       data-scroller="true">Billing &amp; sales
-                                questions</a>
-                            <a class="Link small mb-4 d-block Link--alt" href="#section-setup-questions"
-                               data-scroller="true">Set up questions</a><a class="Link small mb-4 d-block Link--alt"
-                                                                           href="#section-connection-issues"
-                                                                           data-scroller="true">Connection issues</a><a
-                                    class="Link small mb-4 d-block Link--alt" href="#section-technical-information"
-                                    data-scroller="true">Technical information</a></div>
-                        <div id="section-general" class="mb-11 mb-md-13">
-                            <h2 class="Title h5 pb-5">功能使用疑问</h2>
+                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2747305744&site=qq&menu=yes">
+                            <img src="/images/kefu.jpg" class="img-responsive" alt="Responsive image" style="margin-top: 10px">
+                        </a>
+                        <div id="section-general" class="mb-11 mb-md-13" style="margin-bottom: 40px">
+                            <h2 class="Title h5 pb-5" style="margin-top: 10px">功能使用疑问</h2>
                             <div class="wp-Accordion wp-Accordion--card" id="general" role="tablist"
                                  aria-multiselectable="true">
                                 <div class="wp-AccordionCardItem js-AccordionCardItem panel py-3">

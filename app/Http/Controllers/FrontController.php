@@ -72,7 +72,7 @@ class FrontController extends Controller
   public function download()
   {
 
-    return view('front/download');
+    return view('front/download2');
   }
 
   public function android()

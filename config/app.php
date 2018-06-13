@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => '穿云梯',
+    'name' => '穿云梯加速器',
 
     /*
     |--------------------------------------------------------------------------

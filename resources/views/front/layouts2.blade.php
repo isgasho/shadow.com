@@ -11,50 +11,14 @@
           content="noindex, nofollow, nosnippet, noarchive, none, noodp, notranslate, noimageindex, unavailable_after: 7 Jul 2007 16:30:00 GMT">
     <meta name="google-site-verification" content="5Nl_vJi9oWZMx7phswAZVO-sQnbAVzbhjDmBbo9Vqfs"/>
     <meta charset="UTF-8">
-    <title>@yield('title')</title>
+    <title>穿云梯加速器</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon-precomposed" sizes="57x57"
-          href="/images/apple-touch-icon-57x57.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="114x114"
-          href="/images/apple-touch-icon-114x114.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="72x72"
-          href="/images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="144x144"
-          href="/images/apple-touch-icon-144x144.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="60x60"
-          href="/images/apple-touch-icon-60x60.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="120x120"
-          href="/images/apple-touch-icon-120x120.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="76x76"
-          href="/images/apple-touch-icon-76x76.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="152x152"
-          href="/images/apple-touch-icon-152x152.png"/>
     <link rel="icon" type="image/png"
-          href="/images/favicon-196x196.png"
-          sizes="196x196"/>
-    <link rel="icon" type="image/png"
-          href="/images/favicon-96x96.png"
-          sizes="96x96"/>
-    <link rel="icon" type="image/png"
-          href="/images/favicon-32x32.png"
-          sizes="32x32"/>
-    <link rel="icon" type="image/png"
-          href="/images/favicon-16x16.png"
-          sizes="16x16"/>
-    <link rel="icon" type="image/png"
-          href="/images/favicon-128.png"
-          sizes="128x128"/>
+          href="/images/logo.ico"
+          sizes="48X48"/>
     <meta name="application-name" content="NordVPN"/>
     <meta name="msapplication-TileColor" content="#FFFFFF"/>
-    <meta name="msapplication-TileImage"
-          content="/images/mstile-144x144.png"/>
-    <meta name="msapplication-square70x70logo"
-          content="/images/mstile-70x70.png"/>
-    <meta name="msapplication-square150x150logo"
-          content="/images/mstile-150x150.png"/>
-    <meta name="msapplication-wide310x150logo"
-          content="/images/mstile-310x150.png"/>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <script type="text/javascript">
@@ -267,56 +231,12 @@
 
     <!-- All in One SEO Pack 2.4.3 by Michael Torbert of Semper Fi Web Design[166,201] -->
     <meta name="description"
-          content="访问无限互联网! 享受3年的高速网络，价格每月最低达到2.75美元（大约17元） 没有 VPN，就没有安全可言。这是事实。 使用 NordVPN，确保您的在线活动安全、私密。 安全 Wi-Fi 使用 NordVPN 安全、可靠地接入公共热点后，您可以放心地查询资金账户余额、在线购物或使用社交媒体。只需轻轻一点，Nord"/>
-    <meta name="robots" content="noindex,follow"/>
-
-    <meta property="og:title" content="穿云梯VPN特价 | 穿云梯"/>
-    <meta property="og:type" content="article"/>
-    <meta property="og:url" content="https://nordwebsite.net/zh/special/china-deal/"/>
-    <meta property="og:image" content="https://nordwebsite.net/wp-content/uploads/2017/12/holiday-deal-fb-01-1.png"/>
-    <meta property="og:site_name" content="NordVPN"/>
-    <meta property="og:description"
-          content="Happy Holidays and a Secure New Year! Enjoy 3 years of online security for only $99!"/>
-    <meta property="article:published_time" content="2017-12-06T10:32:15Z"/>
-    <meta property="article:modified_time" content="2018-05-07T13:11:11Z"/>
-    <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:title" content="穿云梯VPN特价 | 穿云梯"/>
-    <meta name="twitter:description"
-          content="Happy Holidays and a Secure New Year! Enjoy 3 years of online security for only $99!"/>
-    <meta name="twitter:image" content="/images/2017/12/holiday-deal-fb-01-1.png"/>
-    <meta itemprop="image" content="/images/2017/12/holiday-deal-fb-01-1.png"/>
-    <!-- /all in one seo pack -->
-    <link rel='dns-prefetch' href='//s1.nordwebsite.net'/>
-    <link rel='dns-prefetch' href='//s.w.org'/>
+          content="穿云梯,穿云梯VPN,免费VPN,vpn"/>
     <script type='text/javascript' src='/js/front/jquery/1.12.4/jquery.min.js?ver=1.11.3'></script>
-    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://nordwebsite.net/xmlrpc.php?rsd"/>
-    <link rel="wlwmanifest" type="application/wlwmanifest+xml"
-          href="https://nordwebsite.net/wp-includes/wlwmanifest.xml"/>
-    <link rel='shortlink' href='https://nordwebsite.net/zh/?p=56742'/>
     <script type="text/javascript">
         if (!window.dataLayer) {
             window.dataLayer = [];
         }
-
-        // jQuery(window).load(function () {
-        //     var googleTag = function () {
-        //         (function (w, d, s, l, i) {
-        //             w[l] = w[l] || [];
-        //             w[l].push({
-        //                 'gtm.start':
-        //                     new Date().getTime(), event: 'gtm.js'
-        //             });
-        //             var f = d.getElementsByTagName(s)[0],
-        //                 j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-        //             j.async = true;
-        //             j.src =
-        //                 '//www.googletagmanager.com/gtm.js?id=' + i + dl;
-        //             f.parentNode.insertBefore(j, f);
-        //         })(window, document, 'script', 'dataLayer', 'GTM-WX5CH8');
-        //     };
-        //
-        //     googleTag();
-        // });
     </script>
     <script type='text/javascript'>
         var _vwo_code = (function () {
@@ -619,9 +539,9 @@
                 <div class="col-md-3 col-xs-6">
                     <a href="/front">
                         <img src="/images/logo1.svg"
-                             alt="logo" class="Logo"/>
-                        <img src="/images/logo2.png"
-                             alt="logo" class="Logo"/>
+                             alt="logo" class="Logo" style="width: 60px"/>
+                        <img src="/images/logo2.png?v=1.0"
+                             alt="logo" class="Logo" style="width: 85px"/>
                     </a>
                 </div>
 
@@ -640,7 +560,7 @@
                     </button>
                 </div>
 
-                <div class="col-md-9 col-xs-12">
+                <div class="col-md-9 col-xs-12" style="height: 60px;line-height: 60px">
                     <div class="navbar-collapse Navigation__body">
                         <div class="HeaderMenu HeaderMenu--light">
                             <ul class="pull-sm-none pull-md-right pull-lg-right pull-xs-none">
@@ -701,6 +621,7 @@
                                 <li>
                                     @if(Session::has('user'))
                                         <a class="Button Button--primary Button--small" href="/user" role="button" tabindex="0"><span>我的账户</span></a>
+                                        <a class="Button Button--primary Button--small" href="{{url('logouttofront')}}" role="button" tabindex="0"><span>退出</span></a>
                                     @else
                                         <a class="Button Button--primary Button--small" href="/login" role="button" tabindex="0"><span>登陆</span></a>
                                         <a class="Button Button--primary Button--small" href="/register" role="button" tabindex="0"><span>注册</span></a>
@@ -816,6 +737,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container" style="text-align: center;font-size: 10px;height: 40px;line-height: 40px">
+        <span>Copyright © 2018 穿云梯加速器</span>
     </div>
 </footer>
 

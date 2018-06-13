@@ -1,6 +1,6 @@
 @extends('front.layouts')
 
-@section('title', '穿云梯--访问无限互联网')
+@section('title', '穿云梯加速器')
 @section('content')
     <style>
         .indexImg{
@@ -22,23 +22,14 @@
 <div class="BaseTemplate HolidayDeal">
     <div class="Hero">
         <div class="Background"
-             style="background-image:url(https://s1.nordwebsite.net/nordvpn/3.78.0/images/homepage/chinese-wall.jpg);background-repeat:no-repeat;background-position:left top;background-size:cover">
+             style="background-image:url(/images/index_banner4.jpg);background-repeat:no-repeat;background-position:left top;background-size:cover">
             <div class="container pt-9 pt-sm-10 Hero__container d-flex">
                 <div class="row py-9 py-sm-12 py-lg-13 d-md-flex">
-                    <div class="col-xs-10 col-xs-offset-1 col-md-5 col-md-push-7 col-md-offset-0"><img
-                                src="https://s1.nordwebsite.net/nordvpn/3.32.0/images/global/devices/hero-multiple-light-discount77-pcmag.png"
-                                srcSet="https://s1.nordwebsite.net/nordvpn/3.32.0/images/global/devices/hero-multiple-light-discount77-pcmag.png 1x, https://s1.nordwebsite.net/nordvpn/3.32.0/images/global/devices/hero-multiple-light-discount77-pcmag@2x.png 2x"
-                                class="Image mb-6 mb-sm-9 mb-md-0 center-block img-responsive" alt="devices"/></div>
-                    <div class="col-xs-12 col-md-7 col-md-pull-5 col-md-offset-0 col-lg-7 col-lg-pull-5 text-sm-center text-xs-center">
-                        <h1 class="c-bw-1 mb-5 mb-sm-6"><span>访问无限互联网!</span></h1>
-                        <p class="c-bw-1 fwm mb-5 mb-sm-6"><span>享受3年的高速网络，价格每月最低达到2.75美元（大约17元）</span></p><a
+                    <div class="col-xs-12 col-md-12 col-lg-12 text-sm-center text-xs-center">
+                        <h1 class="c-bw-1 mb-5 mb-sm-6"><span>突破限制，从我出发!</span></h1>
+                        <p class="c-bw-1 fwm mb-5 mb-sm-6"><span>任何的限制，都是从自己的内心开始的</span></p><a
                                 class="Button Button--primary Button--large mb-6 mb-sm-7 mb-md-6 mt-3 mt-md-0"
-                                href="/front/order" role="button" tabIndex="0"><span>立即获得穿云梯</span></a>
-                        <div><a class="Link small fwm Link--light" href="#scroll-down" data-scroller="true"><span
-                                        class="mr-2"><img
-                                            src="https://s1.nordwebsite.net/nordvpn/3.32.0/images/global/icons/16/scroll-down.svg"
-                                            class="SVG SVG--inline c-bw-1" alt="Scroll down"/></span><span
-                                        class="inline-vertical-middle"><span>向下滚动，了解更多信息</span></span></a></div>
+                                href="/front/order" role="button" tabIndex="0"><span>注册免费试用</span></a>
                         <div
                                 class="visible-xs clearfix mb-5"></div>
                     </div>
