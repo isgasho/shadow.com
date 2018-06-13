@@ -182,6 +182,10 @@ DB_PASSWORD=root
 1.提示找不到 `App\Sms\REST`类
 
     在根目录下运行`composer dumpautoload`即可
+    
+2.工单回复，图片上传失败
+
+    chmod -R 777 /public/upload
 ```
 
 ## 更新内容

@@ -277,8 +277,6 @@
 
     <meta property="og:title" content="NordVPN特价 | NordVPN"/>
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content="https://nordwebsite.net/zh/special/china-deal/"/>
-    <meta property="og:image" content="https://nordwebsite.net/wp-content/uploads/2017/12/holiday-deal-fb-01-1.png"/>
     <meta property="og:site_name" content="NordVPN"/>
     <meta property="og:description"
           content="Happy Holidays and a Secure New Year! Enjoy 3 years of online security for only $99!"/>
@@ -288,11 +286,7 @@
     <meta name="twitter:title" content="NordVPN特价 | NordVPN"/>
     <meta name="twitter:description"
           content="Happy Holidays and a Secure New Year! Enjoy 3 years of online security for only $99!"/>
-    <meta name="twitter:image" content="https://nordwebsite.net/wp-content/uploads/2017/12/holiday-deal-fb-01-1.png"/>
-    <meta itemprop="image" content="https://nordwebsite.net/wp-content/uploads/2017/12/holiday-deal-fb-01-1.png"/>
     <!-- /all in one seo pack -->
-    <link rel='dns-prefetch' href='//s1.nordwebsite.net'/>
-    <link rel='dns-prefetch' href='//s.w.org'/>
     <script type='text/javascript' src='/js/front/jquery/1.12.4/jquery.min.js?ver=1.11.3'></script>
     <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://nordwebsite.net/xmlrpc.php?rsd"/>
     <link rel="wlwmanifest" type="application/wlwmanifest+xml"
@@ -375,32 +369,9 @@
         }());
         _vwo_settings_timer = _vwo_code.init();
     </script>
-    <script type="text/javascript">function sptRecordConversion(id) {
-            jQuery.post("https://nordwebsite.net/wp-admin/admin-ajax.php", {
-                action: "sptAjaxRecordConversion",
-                sptID: id
-            });
-        }</script>
+
     <link rel="stylesheet" href="/css/front/normalize.css">
-    <script type="text/javascript">
-        "use strict";
-        jQuery(document).ready(function () {
-            !function (e) {
-                var t = jQuery(".slide-container"), s = jQuery(".page-title-container");
-                t.length > 0 && t.css("background-image", "url(" + e + ")"), s.length > 0 && s.css("background-image", "url(" + e + ")")
-            }("https://s1.nordwebsite.net/nordvpn/0.34.0/images/checkout/main-bg.jpg"), jQuery.ajax({
-                url: adminAjax,
-                data: {action: "get_user_info_data"},
-                success: function (e) {
-                    var t = !0 === e.status ? "Secured" : "Unprotected",
-                        s = !0 === e.status ? "secured" : "not-secured",
-                        a = "" === e.isp || null === e.isp ? "Unknown" : e.isp,
-                        n = "" === e.ip || null === e.ip ? "Unknown" : e.ip;
-                    jQuery('[data-user="ip"]').html(n), jQuery('[data-user="isp"]').html(a), jQuery('[data-user="' + s + '"]').removeClass("hide"), jQuery('[data-user="status"]').html(t), jQuery(".connection-status").addClass(s), !0 === e.status && jQuery('[data-user="status"]').attr("href", "javascript" + String.fromCharCode(58) + "void(0);").css("pointer-events", "none"), jQuery(".user-info-box").slideDown("fast")
-                }
-            })
-        });
-    </script>
+
     <script type="text/javascript">
         !function (e) {
             function t(r) {

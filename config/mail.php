@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'driver' => 'smtp',
+    'driver' => env('MAIL_DRIVER'),
 
     /*
     |--------------------------------------------------------------------------
@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => 'smtp.163.com',
+    'host' => env('MAIL_HOST'),
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +42,7 @@ return [
     |
     */
 
-    'port' => 465,
+    'port' => env('MAIL_PORT'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => 'mylittlecocos@163.com',
-        'name' => '穿云梯',
+        'address' => env('MAIL_USERNAME'),
+        'name' => env('MAIL_NAME'),
     ],
 
     /*
@@ -71,7 +71,7 @@ return [
     |
     */
 
-    'encryption' => 'ssl',
+    'encryption' => env('MAIL_ENCRYPTION'),
 
     /*
     |--------------------------------------------------------------------------
@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => 'mylittlecocos@163.com',
+    'username' => env('MAIL_USERNAME'),
 
-    'password' => 'lovekimiyu',
+    'password' => env('MAIL_PASSWORD'),
 
     /*
     |--------------------------------------------------------------------------

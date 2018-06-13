@@ -2,12 +2,6 @@
 
 @section('title', '穿云梯--帮助中心')
 @section('content')
-    <script type="text/javascript">function sptRecordConversion(id) {
-            jQuery.post("https://nordwebsite.net/wp-admin/admin-ajax.php", {
-                action: "sptAjaxRecordConversion",
-                sptID: id
-            });
-        }</script>
     <link rel="stylesheet" href="/css/front/base2.css" onload="this.rel='stylesheet'"
           as="style">
     <noscript>
