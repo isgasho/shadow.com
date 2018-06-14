@@ -22,7 +22,7 @@
 <div class="BaseTemplate HolidayDeal">
     <div class="Hero">
         <div class="Background"
-             style="background-image:url(/images/index_banner4.jpg);background-repeat:no-repeat;background-position:left top;background-size:cover">
+             style="background-image:url(/images/index_banner5.jpg);background-repeat:no-repeat;background-position:left top;background-size:cover">
             <div class="container pt-9 pt-sm-10 Hero__container d-flex">
                 <div class="row py-9 py-sm-12 py-lg-13 d-md-flex">
                     <div class="col-xs-12 col-md-12 col-lg-12 text-sm-center text-xs-center">

@@ -284,7 +284,7 @@
         }());
         _vwo_settings_timer = _vwo_code.init();
     </script>
-    <link rel="stylesheet" href="/css/front/normalize.css?v=1.2">
+    <link rel="stylesheet" href="/css/front/normalize.css?v=1.4">
 
     <script type="text/javascript">
         "use strict";
@@ -542,6 +542,7 @@
                              alt="logo" class="Logo" style="width: 60px"/>
                         <img src="/images/logo2.png?v=1.0"
                              alt="logo" class="Logo" style="width: 85px"/>
+                        <span class="slogen">|&nbsp;&nbsp;网络加速器 </span>
                     </a>
                 </div>
 

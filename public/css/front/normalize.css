@@ -4096,7 +4096,7 @@ body {
 }
 
 .Hero__container {
-    min-height: 100vh
+    min-height: 6vh
 }
 
 .Hero__container, .Hero__container .row {
@@ -4166,4 +4166,9 @@ body {
 
 .HeaderMenu--light > ul > li a:not(.Button) {
     color: #383c43
+}
+.slogen{
+    position: absolute;
+    top: 25px;
+    margin-left: 15px;
 }
