@@ -526,13 +526,13 @@
     <nav class="Navigation Navigation--light">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-xs-6">
+                <div class="col-md-5 col-xs-6">
                     <a href="/front">
                         <img src="/images/logo1.svg"
                              alt="logo" class="Logo" style="width: 60px"/>
                         <img src="/images/logo2.png?v=1.0"
                              alt="logo" class="Logo" style="width: 85px"/>
-                        <span class="slogen">|&nbsp;&nbsp;网络加速器 </span>
+                        <span class="slogen">|&nbsp;&nbsp;专业稳定的网络加速器 </span>
                     </a>
                 </div>
 
@@ -551,7 +551,7 @@
                     </button>
                 </div>
 
-                <div class="col-md-9 col-xs-12" style="height: 60px;line-height: 60px">
+                <div class="col-md-7 col-xs-12" style="height: 60px;line-height: 60px">
                     <div class="navbar-collapse Navigation__body">
                         <div class="HeaderMenu HeaderMenu--light">
                             <ul class="pull-sm-none pull-md-right pull-lg-right pull-xs-none">

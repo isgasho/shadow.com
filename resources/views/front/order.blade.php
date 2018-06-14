@@ -13,7 +13,7 @@
     <main>
         <div class="bg-bw-2">
             <div class="container" style="margin-top: 10px">
-                <img src="/images/buy_center.png" class="img-responsive" alt="Responsive image">
+                <img src="/images/buy_center.png?v=1.0" class="img-responsive" alt="Responsive image">
             </div>
             <div id="plan-section" class="PlanCardsSection">
                 <div class="container">

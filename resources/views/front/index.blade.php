@@ -12,6 +12,9 @@
         .content_ohh{
             color: #333;
         }
+        .base{
+            font-size: 20px;
+        }
     </style>
     <link rel="stylesheet" href="/css/front/base2.css" onload="this.rel='stylesheet'"
           as="style">
@@ -43,8 +46,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 text-center">
-                        <h3 class="Title mb-6"><span>不断努力提升，满足用户需求的网络加速工具</span></h3>
-                        <p class="Text mb-7 small"><span>使用穿云梯，确保您的在线活动安全、私密。</span></p>
+                        <h3 class="Title mb-6"><span>不断满足用户需求的网络加速工具</span></h3>
+                        <p class="Text mb-7"><span>使用穿云梯，确保您的在线活动安全、私密</span></p>
                     </div>
                 </div>
                 <div class="row row__flex">
@@ -58,7 +61,7 @@
                                 </h6>
                                 <p class="Text small mb-0">
                                     <span>
-                                        手机注册即送5G流量免费体验
+                                        手机注册即送1G流量免费体验
                                     </span>
                                 </p>
                             </div>
