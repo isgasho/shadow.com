@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="row" style="padding-left: 18%;padding-right: 18%">
-        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
             <div>
                 <div class="Paper bg-bw-1 PlanCard text-center PlanCard--type-special sha-1 sha-3-hover">
                     <div class="PlanCard__body p-5">
@@ -49,7 +49,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
             <div>
                 <div class="Paper bg-bw-1 PlanCard text-center PlanCard--type-special sha-1 sha-3-hover">
                     <div class="PlanCard__body p-5">
@@ -80,7 +80,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
             <div>
                 <div class="Paper bg-bw-1 PlanCard text-center PlanCard--type-special sha-1 sha-3-hover">
                     <div class="PlanCard__body p-5">
@@ -111,7 +111,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
             <div>
                 <div class="Paper bg-bw-1 PlanCard text-center PlanCard--type-special sha-1 sha-3-hover">
                     <div class="PlanCard__body p-5">
