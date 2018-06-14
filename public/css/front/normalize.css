@@ -317,6 +317,17 @@ hr {
     }
 }
 
+@media (min-width: 1600px) {
+    .container {
+        width: 1570px
+    }
+}
+@media (min-width: 1900px) {
+    .container {
+        width: 1770px
+    }
+}
+
 .container-fluid {
     margin-right: auto;
     margin-left: auto;
@@ -4085,7 +4096,7 @@ body {
 }
 
 .Hero__container {
-    min-height: 65vh
+    min-height: 100vh
 }
 
 .Hero__container, .Hero__container .row {

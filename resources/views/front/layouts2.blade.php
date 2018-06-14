@@ -284,7 +284,7 @@
         }());
         _vwo_settings_timer = _vwo_code.init();
     </script>
-    <link rel="stylesheet" href="/css/front/normalize.css">
+    <link rel="stylesheet" href="/css/front/normalize.css?v=1.2">
 
     <script type="text/javascript">
         "use strict";
