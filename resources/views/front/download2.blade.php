@@ -68,7 +68,7 @@
                         </div>
                         <div class="PlanCard__pricing fwb mt-2 c-bw-12">
                             <span class="d-block small fwm mb-4 mb-md-5 mt-2">
-                                <p style="font-size: 10px">系统要求：OS X Mavericks 及以上</p>
+                                <p style="font-size: 10px">系统要求：OSX Lion及以上</p>
                             </span>
                         </div>
                         <div class="PlanCard__description">
