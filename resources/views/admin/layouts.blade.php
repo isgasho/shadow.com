@@ -30,7 +30,7 @@
     <link href="/assets/layouts/layout4/css/themes/default.min.css" rel="stylesheet" type="text/css" id="style_color" />
     <link href="/assets/layouts/layout4/css/custom.min.css" rel="stylesheet" type="text/css" />
     <!-- END THEME LAYOUT STYLES -->
-    <link rel="shortcut icon" href="{{asset('favicon.ico')}}" />
+    <link rel="shortcut icon" href="{{asset('favicon2.ico')}}" />
     <style>
         .page-header.navbar{
             background:#3A74FF ;
