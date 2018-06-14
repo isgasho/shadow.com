@@ -16,6 +16,7 @@
         </div>
         <div class="col-md-6 col-xs-12 col-sm-12" style="margin-top: 20px">
             <h3 class="Title">支持各主流系统平台使用</h3>
+            <p style="margin-top: 20px">本站提供SS/SSR协议节点，是目前加速最流行的解决方案。支持Windows、Mac、iOS、Android 终端，下载软件添加节点即可使用。如果您是新手用户不清楚如何使用，建议花一点时间查看下面使用教程。</p>
         </div>
     </div>
     <div class="row" style="padding-left: 18%;padding-right: 18%">
@@ -42,7 +43,7 @@
                             </span>
                         </div>
                         <div class="PlanCard__description">
-                            <button class="Button Button--primary"> 下载 </button>
+                            <a class="Button Button--primary" href="/download_vpn/android/ShadowsocksR-v3.4.0.6.apk"> 下载 </a>
                             <button class="Button" style="background-color: #ffffff;color: #f64f64;font-size: 14px"> 查看教程 </button>
                         </div>
                     </div>
@@ -72,7 +73,7 @@
                             </span>
                         </div>
                         <div class="PlanCard__description">
-                            <button class="Button Button--primary"> 下载 </button>
+                            <a class="Button Button--primary" href="/download_vpn/macOs/ShadowsocksX-R-v1.3.9.zip"> 下载 </a>
                             <button class="Button" style="background-color: #ffffff;color: #f64f64;font-size: 14px"> 查看教程 </button>
 
                         </div>
@@ -103,7 +104,7 @@
                             </span>
                         </div>
                         <div class="PlanCard__description">
-                            <button class="Button Button--primary"> 下载 </button>
+                            <a class="Button Button--primary" href="/download_vpn/windows/ShadowsocksR-4.7.0.7z"> 下载 </a>
                             <button class="Button" style="background-color: #ffffff;color: #f64f64;font-size: 14px"> 查看教程 </button>
 
                         </div>
